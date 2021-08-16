@@ -10,48 +10,61 @@ import EmailIcon from '@material-ui/icons/Email';
 import HomeIcon from '@material-ui/icons/Home';
 import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
+
+
 
 const drawerWidth = 150;
-const minAltura= 900
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
       alignItems: "center",
-      minHeight:minAltura,
-    },
-    appBar: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
+      minHeight:"100vh",
     },
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
-      
     },
     drawerPaper: {
       width: drawerWidth,
     },
+    
     lista:{
         display: 'flex',
         justifyContent: "center",
         flexDirection: "column",
-        minHeight:minAltura,
-        
+        minHeight:"100vh",
+        backgroundColor:"black",
+        color: "white",
         
     },
+    icon:{
+      "&:focus":{
+        color: "#2979ff"
+      },
+    },
     content: {
-      backgroundColor: theme.palette.background.default,
+     
       padding: theme.spacing(1),
       textAlign: "initial",
-      marginLeft: "70px"
+      marginLeft: "70px",
+      fontFamily: "monospace" 
     },
     text:{
         marginLeft:"7px"
-    }
+    },
+    h33:{
+      fontFamily: "monospace",
+      fontSize: "2.8rem"
+    },
   }),
 );
+
+
 
 function Home():JSX.Element {
   const classes = useStyles();
@@ -67,45 +80,50 @@ function Home():JSX.Element {
         }}
         anchor="left"
       >
-        <div />
+       
        
         <List className={classes.lista}>
-          
-            <ListItem button>
-               <HomeIcon/>
-              <ListItemText primary={" Home"} className={classes.text}/>
+            <Divider/>
+            <ListItem button className={classes.icon}>
+               <HomeIcon />
+              <ListItemText primary={"Inicio"} className={classes.text}/>
             </ListItem>
-            <ListItem button>
-               <EmailIcon/>
-              <ListItemText primary={" Contact"} className={classes.text}/>
-            </ListItem>
-            <ListItem button>
-               <AppsIcon/>
-              <ListItemText primary={" Projects"} className={classes.text}/>
-            </ListItem>
-            <ListItem button>
+            <Divider/>
+            <ListItem button className={classes.icon}>
                <PersonIcon/>
-              <ListItemText primary={" About Me"} className={classes.text}/>
+              <ListItemText primary={"Sobre mi"} className={classes.text}/>
             </ListItem>
-        </List>
-        
-        
+            <Divider/>
+            <ListItem button className={classes.icon}>
+               <AppsIcon/>
+              <ListItemText primary={"Proyectos"} className={classes.text}/>
+            </ListItem>
+            <Divider/>
+            <ListItem button className={classes.icon}>
+               <EmailIcon/>
+              <ListItemText primary={"Contacto"} className={classes.text}/>
+            </ListItem>
+            <Divider/>
+        </List>   
       </Drawer>
       <main className={classes.content}>
-        <div />
-        <Typography variant="h3" >
-          Hola!,
+      <section >
+        <Typography variant="h3" className={classes.h33}>
+          Hola,
         </Typography>
-        <Typography variant="h3" >
+        <Typography variant="h3" className={classes.h33}>
           soy Dario,
         </Typography>
-        <Typography variant="h3" >
-          full stack developer.
+        <Typography variant="h3" className={classes.h33}>
+          Full Stack Developer.
         </Typography>
         <Typography variant="overline">
           Bienvenidos a mi portfolio
         </Typography>
-        
+        </section>
+        <div>
+        <Button variant="outlined" color="primary" style={{marginTop: "20px"}}>Contactame</Button>
+        </div>
       </main>
     </div>
   );
