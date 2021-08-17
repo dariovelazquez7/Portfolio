@@ -1,4 +1,4 @@
-import React from 'react';
+import "./Home.css"
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,10 +12,12 @@ import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
+import logo from "../../img/mylogo.png"
 
 
 
 const drawerWidth = 150;
+const colorPrimary = "#00C2CB"
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -40,11 +42,11 @@ const useStyles = makeStyles((theme: Theme) =>
         minHeight:"100vh",
         backgroundColor:"black",
         color: "white",
-        
     },
     icon:{
+      margin: theme.spacing(1.5, 0),
       "&:focus":{
-        color: "#2979ff"
+        color: colorPrimary
       },
     },
     content: {
@@ -61,6 +63,13 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "monospace",
       fontSize: "2.8rem"
     },
+    // logo:{
+    //   width:"300px",
+    //   height:"300px",
+    //   marginLeft: "100px",
+    //   borderRadius: "50%",
+    //   boxShadow: "0 0 10px 3px #00C2CB",
+    // }
   }),
 );
 
@@ -80,8 +89,7 @@ function Home():JSX.Element {
         }}
         anchor="left"
       >
-       
-       
+
         <List className={classes.lista}>
             <Divider/>
             <ListItem button className={classes.icon}>
@@ -117,14 +125,24 @@ function Home():JSX.Element {
         <Typography variant="h3" className={classes.h33}>
           Full Stack Developer.
         </Typography>
-        <Typography variant="overline">
+        <Typography variant="overline" style={{color:"gray"}}>
           Bienvenidos a mi portfolio
         </Typography>
         </section>
         <div>
-        <Button variant="outlined" color="primary" style={{marginTop: "20px"}}>Contactame</Button>
+        <Button 
+        variant="outlined" 
+        color="primary" 
+        style={{marginTop: "20px"}}
+        startIcon={<EmailIcon />}
+        >
+          Contactame
+        </Button>
         </div>
       </main>
+        <div >
+          <img src={logo} alt="Dario velazquez" className="logo"/>
+        </div>
     </div>
   );
 }
