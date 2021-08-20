@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
+
 const useStyles = makeStyles((theme: Theme) =>
 createStyles({
     root: {
@@ -20,18 +21,20 @@ createStyles({
   
   
 
-function About() {
+function Contact() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <Sidebar/>
             <main className={classes.content}>
           <section>
-              acerca de mi
+              redes de contacto y email
           </section>
           </main>
         </div>
     )
 }
 
-export default About
+
+
+export default Contact
