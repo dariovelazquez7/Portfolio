@@ -11,8 +11,9 @@ import HomeIcon from '@material-ui/icons/Home';
 import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
+import {Link} from "react-router-dom"
 import logo from "../../img/mylogo.png"
+import { Box } from "@material-ui/core";
 
 
 
@@ -30,16 +31,22 @@ const useStyles = makeStyles((theme: Theme) =>
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
+      
     },
     drawerPaper: {
       width: drawerWidth,
+      minHeight:"100vh",
+      backgroundColor:"black",
+      borderRight: "1px solid white",
+      display: 'flex',
+      justifyContent: "center",
     },
     
     lista:{
         display: 'flex',
         justifyContent: "center",
         flexDirection: "column",
-        minHeight:"100vh",
+        
         backgroundColor:"black",
         color: "white",
     },
@@ -63,13 +70,12 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "monospace",
       fontSize: "2.8rem"
     },
-    // logo:{
-    //   width:"300px",
-    //   height:"300px",
-    //   marginLeft: "100px",
-    //   borderRadius: "50%",
-    //   boxShadow: "0 0 10px 3px #00C2CB",
-    // }
+    logo2:{
+      width:"80px",
+      height:"80px",
+      borderRadius: "50%",
+      boxShadow: "0 0 10px 3px #00C2CB",
+    }
   }),
 );
 
@@ -89,29 +95,33 @@ function Home():JSX.Element {
         }}
         anchor="left"
       >
+  
+        <Box component="span" style={{position:"absolute", top: "0", justifySelf:"center", marginLeft:"20px", marginTop: "20px"}}>
+        <img src={logo} alt="Dario velazquez" className={classes.logo2}/>
+        </Box>      
 
         <List className={classes.lista}>
-            <Divider/>
+           
             <ListItem button className={classes.icon}>
                <HomeIcon />
               <ListItemText primary={"Inicio"} className={classes.text}/>
             </ListItem>
-            <Divider/>
+            <Link to="/about">
             <ListItem button className={classes.icon}>
                <PersonIcon/>
               <ListItemText primary={"Sobre mi"} className={classes.text}/>
             </ListItem>
-            <Divider/>
+            </Link>
             <ListItem button className={classes.icon}>
                <AppsIcon/>
               <ListItemText primary={"Proyectos"} className={classes.text}/>
             </ListItem>
-            <Divider/>
+           
             <ListItem button className={classes.icon}>
                <EmailIcon/>
               <ListItemText primary={"Contacto"} className={classes.text}/>
             </ListItem>
-            <Divider/>
+            
         </List>   
       </Drawer>
       <main className={classes.content}>

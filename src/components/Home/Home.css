@@ -5,7 +5,24 @@
     border-radius: 50%;
     box-shadow: 0 0 10px 3px #00C2CB;
    
+    /* background-size: cover; */
+   
   }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .logo{
+        animation: flip 10s linear infinite;
+    }
+  }
+  
 
+  @keyframes flip{
+      50%{
+          transform: rotateY(180deg);
+      }
+      to{
+        transform: rotateY(360deg);
+      }
+  }
 
   
