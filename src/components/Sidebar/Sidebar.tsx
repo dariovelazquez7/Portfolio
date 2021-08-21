@@ -9,6 +9,8 @@ import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
+import { Box } from "@material-ui/core"; 
+import logo from "../../img/mylogo.png"
 
 const colorPrimary = "#00C2CB";
 const widthDraw= 200;
@@ -47,6 +49,12 @@ drawer: {
     display: 'flex',
     justifyContent: "center",
   },
+  logo2:{
+    width:"80px",
+    height:"80px",
+    borderRadius: "50%",
+    boxShadow: "0 0 10px 3px #00C2CB",
+  }
 })
 )
 
@@ -63,6 +71,9 @@ function Sidebar() {
         }}
         anchor="left"
       >
+          <Box component="span" style={{position:"absolute", top: "0", justifySelf:"center", marginLeft:"20px", marginTop: "20px"}}>
+        <img src={logo} alt="Dario velazquez" className={classes.logo2}/>
+        </Box>   
             <List className={classes.lista}>
            <Link to="/">
             <ListItem button className={classes.icon}>

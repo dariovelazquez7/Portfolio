@@ -24,7 +24,7 @@ function About() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Sidebar/>
+            
             <main className={classes.content}>
           <section>
               acerca de mi

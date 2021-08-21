@@ -1,16 +1,10 @@
 import "./Home.css"
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import EmailIcon from '@material-ui/icons/Email';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import logo from "../../img/mylogo.png"
-import { Box } from "@material-ui/core";
-import Sidebar from "../Sidebar/Sidebar"
-
-
-
 
 
 
@@ -21,23 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       minHeight:"100vh",
     },
-    // drawer: {
-    //   width: drawerWidth,
-    //   flexShrink: 0,
-      
-    // },
-    // drawerPaper: {
-    //   width: drawerWidth,
-    //   minHeight:"100vh",
-    //   backgroundColor:"black",
-      
-    //   display: 'flex',
-    //   justifyContent: "center",
-    // },
-    
-    
-    content: {
-     
+    content: {  
       padding: theme.spacing(1),
       textAlign: "initial",
       marginLeft: "70px",
@@ -48,12 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "monospace",
       fontSize: "2.8rem"
     },
-    logo2:{
-      width:"80px",
-      height:"80px",
-      borderRadius: "50%",
-      boxShadow: "0 0 10px 3px #00C2CB",
-    }
+    
   }),
 );
 
@@ -61,16 +34,9 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Home():JSX.Element {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
-      <CssBaseline />
-     
-        <Box component="span" style={{position:"absolute", top: "0", justifySelf:"center", marginLeft:"20px", marginTop: "20px"}}>
-        <img src={logo} alt="Dario velazquez" className={classes.logo2}/>
-        </Box>      
-        <Sidebar/>
-      
+      <CssBaseline />    
       <main className={classes.content}>
       <section >
         <Typography variant="h3" className={classes.h33}>

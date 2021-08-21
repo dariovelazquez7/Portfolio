@@ -1,5 +1,4 @@
 import React from 'react'
-import Sidebar from '../Sidebar/Sidebar'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 
@@ -25,7 +24,7 @@ function Projects() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Sidebar/>
+           
             <main className={classes.content}>
           <section>
               Acá van mis proyectos
