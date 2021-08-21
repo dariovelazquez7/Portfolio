@@ -14,7 +14,8 @@ import EmailIcon from '@material-ui/icons/Email';
 import HomeIcon from '@material-ui/icons/Home';
 import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
-import { idText } from "typescript"
+
+
 
 export default function Slide2 (){
   const [currentSlide, setCurrentSlide] = React.useState(0)
@@ -23,9 +24,11 @@ export default function Slide2 (){
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide)
     },
+    vertical: true,
   })
 
   const colorPrimary = "#00C2CB";
+const widthDraw= 200;
 
 
 
@@ -34,31 +37,70 @@ export default function Slide2 (){
     icon:{
       margin: theme.spacing(1.5, 0),
       "&:focus":{
-          color: colorPrimary
+          color: "red"
       },
-      lista:{
+      drawer: {
+        width: widthDraw,
+        flexShrink: 0,
+        background:"black",
+      },
+      drawerPaper: {
+        width: widthDraw,
+        minHeight:"100vh",
+        backgroundColor:"black", 
         display: 'flex',
         justifyContent: "center",
-        // flexDirection: "column",
-        backgroundColor:"black",
-        color: "white",
-          
-    },
+      },
+    //   lista:{
+    //     // display: 'flex',
+    //     // justifyContent: "center",
+    //     // flexDirection: "column",
+    //     // borderRight: "1px solid white",
+    //     // // backgroundColor:"black",
+    //     // // color: "white",
+    //     // minHeight:"100vh",   
+    //     padding: "20px 0"
+    // },
+    
     }
   })
   )
 
   const classes = useStyles()
   return (
-    <>
+    <div className="container">
       <div className="navigation-wrapper">
-        <div ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide number-slide1"><Home/></div>
-        <div className="keen-slider__slide number-slide2"> <About/></div>
-        <div className="keen-slider__slide number-slide4"><Projects/></div> 
-        <div className="keen-slider__slide number-slide3"><Contact/></div>
         
-        </div>
+        
+      </div>
+      {slider && (
+      <div className="dots">
+          {[...Array(slider.details().size).keys()].map((idx) => {
+            return (
+              
+              <List className={classes.lista} key={idx}>
+              <ListItem button  onClick={() => {
+                    slider.moveToSlideRelative(idx)
+                  }}
+                  className={"dot" + (currentSlide === idx ? " active" : "")}
+                  >
+                    {idx === 0? <HomeIcon/>:idx === 1? <PersonIcon/>:idx === 2? <AppsIcon/>:idx === 3? <EmailIcon/>: false}
+             <ListItemText primary={idx === 0? "Home":idx === 1? "About":idx === 2? "Projects":idx === 3? "Contact": false}/>
+            
+           </ListItem>
+            </List>
+            
+            )
+          })}
+          </div>
+         
+      )}
+      <div ref={sliderRef} className="keen-slider">
+        <div className="keen-slider__slide slide"><Home/></div>
+        <div className="keen-slider__slide slide"> <About/></div>
+        <div className="keen-slider__slide slide"><Projects/></div> 
+        <div className="keen-slider__slide slide"><Contact/></div>
+        
         {slider && (
           <>
             <ArrowLeft
@@ -71,27 +113,8 @@ export default function Slide2 (){
             />
           </>
         )}
-      </div>
-      {slider && (
-        <div className="dots">
-          {[...Array(slider.details().size).keys()].map((idx) => {
-            return (
-              <List className={classes.lista}>
-              <ListItem button key={idx} onClick={() => {
-                    slider.moveToSlideRelative(idx)
-                  }}
-                  className={"dot" + (currentSlide === idx ? " active" : "")}
-                  >
-                    {idx === 0? <HomeIcon/>:idx === 1? <PersonIcon/>:idx === 2? <AppsIcon/>:idx === 3? <EmailIcon/>: false}
-             <ListItemText primary={idx === 0? "Home":idx === 1? "About":idx === 2? "Projects":idx === 3? "Contact": false}/>
-             {console.log(idx)}
-           </ListItem>
-           </List>
-            )
-          })}
         </div>
-      )}
-    </>
+    </div>
   )
 }
 
@@ -104,7 +127,7 @@ function ArrowLeft(props) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
-      <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+      <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
     </svg>
   )
 }
@@ -118,7 +141,7 @@ function ArrowRight(props) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
-      <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
     </svg>
   )
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -15,6 +17,10 @@ createStyles({
         marginLeft: "70px",
         fontFamily: "monospace" 
       },
+      h33:{
+        fontFamily: "monospace",
+        fontSize: "2.8rem"
+      },
 })
 )
   
@@ -27,7 +33,9 @@ function Projects() {
            
             <main className={classes.content}>
           <section>
+          <Typography variant="h3" className={classes.h33}>
               Acá van mis proyectos
+          </Typography>
           </section>
           </main>
         </div>
