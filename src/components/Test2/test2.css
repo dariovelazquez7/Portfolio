@@ -40,22 +40,26 @@
   border: none;
   width: 20px;
   height: 20px;
-  background: #c5c5c5;
-  border-radius: 50%;
+  
   margin: 50px 0;
   padding: 40px 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
+  background: #00C2CB;
+  border-radius: 20px;
+  transition: ease 3s;
 }
 
 .dot:focus {
   outline: none;
+  background: #00C2CB;
   border-radius: 20px;
+  transition: ease 3s;
 }
 
 .dot.active {
   background: #00C2CB;
   border-radius: 20px;
-  
+  transition: ease 1s;
 }
 
 
@@ -81,6 +85,8 @@
 }
 
 .arrow--disabled {
-  fill: rgba(255, 255, 255, 0.5);
+  display: none;
+  fill: rgba(209, 209, 209, 0.5);
+
 }
 

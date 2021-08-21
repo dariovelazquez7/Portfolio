@@ -21,10 +21,10 @@ export default function Slide2 (){
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
+    vertical: true,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide)
     },
-    vertical: true,
   })
 
   const colorPrimary = "#00C2CB";
@@ -103,11 +103,11 @@ const widthDraw= 200;
         
         {slider && (
           <>
-            <ArrowLeft
+            <ArrowUp
               onClick={(e) => e.stopPropagation() || slider.prev()}
               disabled={currentSlide === 0}
             />
-            <ArrowRight
+            <ArrowDown
               onClick={(e) => e.stopPropagation() || slider.next()}
               disabled={currentSlide === slider.details().size - 1}
             />
@@ -118,7 +118,7 @@ const widthDraw= 200;
   )
 }
 
-function ArrowLeft(props) {
+function ArrowUp(props) {
   const disabeld = props.disabled ? " arrow--disabled" : ""
   return (
     <svg
@@ -132,7 +132,7 @@ function ArrowLeft(props) {
   )
 }
 
-function ArrowRight(props) {
+function ArrowDown(props) {
   const disabeld = props.disabled ? " arrow--disabled" : ""
   return (
     <svg
