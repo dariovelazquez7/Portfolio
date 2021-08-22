@@ -38,19 +38,20 @@ const widthDraw= 200;
       margin: theme.spacing(1.5, 0),
       "&:focus":{
           color: "red"
-      },
-      drawer: {
-        width: widthDraw,
-        flexShrink: 0,
-        background:"black",
-      },
-      drawerPaper: {
-        width: widthDraw,
-        minHeight:"100vh",
-        backgroundColor:"black", 
-        display: 'flex',
-        justifyContent: "center",
-      },
+      }
+    },
+    drawer: {
+      width: widthDraw,
+      flexShrink: 0,
+      background:"black",
+    },
+    drawerPaper: {
+      width: widthDraw,
+      minHeight:"100vh",
+      backgroundColor:"black", 
+      display: 'flex',
+      justifyContent: "center",
+    },
     //   lista:{
     //     // display: 'flex',
     //     // justifyContent: "center",
@@ -61,7 +62,12 @@ const widthDraw= 200;
     //     // minHeight:"100vh",   
     //     padding: "20px 0"
     // },
-    
+    btnList:{
+      borderRadius: "10px",
+      margin: "5px 0"
+    },
+    marginR:{
+      marginRight: "10px",
     }
   })
   )
@@ -77,18 +83,18 @@ const widthDraw= 200;
       <div className="dots">
           {[...Array(slider.details().size).keys()].map((idx) => {
             return (
-              
-              <List className={classes.lista} key={idx}>
+              <List>
               <ListItem button  onClick={() => {
                     slider.moveToSlideRelative(idx)
                   }}
                   className={"dot" + (currentSlide === idx ? " active" : "")}
+                  classes={{button:classes.btnList}}
                   >
-                    {idx === 0? <HomeIcon/>:idx === 1? <PersonIcon/>:idx === 2? <AppsIcon/>:idx === 3? <EmailIcon/>: false}
+                    {idx === 0? <HomeIcon classes={{root:classes.marginR}}/>:idx === 1? <PersonIcon classes={{root:classes.marginR}}/>:idx === 2? <AppsIcon classes={{root:classes.marginR}}/>:idx === 3? <EmailIcon classes={{root:classes.marginR}}/>: false}
              <ListItemText primary={idx === 0? "Home":idx === 1? "About":idx === 2? "Projects":idx === 3? "Contact": false}/>
             
            </ListItem>
-            </List>
+           </List>
             
             )
           })}

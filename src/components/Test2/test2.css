@@ -36,30 +36,21 @@
   padding: 10px;
 }
 
-.dot {
+.dot{
   border: none;
-  width: 20px;
-  height: 20px;
+ 
   
-  margin: 50px 0;
-  padding: 40px 10px;
-  /* cursor: pointer; */
-  background: #00C2CB;
-  border-radius: 20px;
-  transition: ease 3s;
+  background: greenyellow;
 }
 
 .dot:focus {
   outline: none;
-  background: #00C2CB;
-  border-radius: 20px;
-  transition: ease 3s;
+ 
 }
 
 .dot.active {
   background: #00C2CB;
-  border-radius: 20px;
-  transition: ease 1s;
+border-radius: 10px;
 }
 
 
@@ -90,3 +81,16 @@
 
 }
 
+/* .lista{
+  border: none;
+  width: 100px;
+  height: 100px;
+  margin: 50px 10px;
+  padding: 40px 20px;
+
+  background: red;
+} */
+
+.MuiListItem-button {
+  border-radius: 10px;
+}
