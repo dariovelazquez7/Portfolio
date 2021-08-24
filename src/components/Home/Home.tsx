@@ -4,8 +4,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import EmailIcon from '@material-ui/icons/Email';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import logo from "../../img/mylogo.png"
-
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -65,8 +63,8 @@ function Home():JSX.Element {
       </main>
         <div className="logo">
           {/* <img src={logo} alt="Dario velazquez" className="logo"/> */}
-          <div className="alpha" id="alpha1">D</div>
-          <div className="aplha" id="alpha2">D</div>
+          <div id="letra1">D</div>
+          <div id="letra2">D</div>
         </div>
     </div>
   );

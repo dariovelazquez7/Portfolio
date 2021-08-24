@@ -1,8 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-#alpha1{
+#letra1{
     position: absolute;
-    /* left: 150px; */
     right: 50px;
     top: 36px;;
     display: inline-block;
@@ -10,14 +9,13 @@
     font-weight: bolder;
     font-stretch: ultra-expanded;
     transform: rotate(359deg);
-    color: cyan;
+    color: #40b3b3;
     font-family: 'Roboto', sans-serif;
     
 }
 
-#alpha2{
+#letra2{
     position: absolute;
-    /* left: 205px; */
     right: 0px;
     top: 35px;
     display: inline-block;
@@ -26,15 +24,15 @@
     font-family:'Roboto', sans-serif ;
     font-stretch: ultra-expanded;
     transform: rotate(359deg);
-    color: #40b3b3;
+    color: cyan;
 }
-
 
 .logo{
    
    position: absolute;
-    right: 100px;
-    top: 85px;
+   right: 100px;
+   top: 100px;
+
   }
   
 @media (prefers-reduced-motion: no-preference){

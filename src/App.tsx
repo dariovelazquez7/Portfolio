@@ -5,6 +5,7 @@ import Slide from "./components/Slide/Slide"
 
 
 function App() {
+  
   return (
     <div className="App">
       <Route exact path="/" component={Slide}/>

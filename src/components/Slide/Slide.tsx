@@ -1,4 +1,4 @@
-import React from "react"
+import React,{ useState } from 'react';
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import "./slide.css"
@@ -16,9 +16,12 @@ import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 
 
+
 export default function Slide (){
-  const [currentSlide, setCurrentSlide] = React.useState(0)
-  const [sliderRef, slider] = useKeenSlider({
+  
+
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     vertical: true,
     slideChanged(s) {
@@ -26,17 +29,24 @@ export default function Slide (){
     },
   })
 
+
   // const colorPrimary = "#00C2CB";
 
-  const useStyles = makeStyles((theme) =>
+  const useStyles = makeStyles((theme:Theme) =>
   createStyles({ 
-    btnList:{
-      borderRadius: "10px",
-      margin: "5px 0"
-    },
+   
     marginR:{
       marginRight: "10px",
     },
+    hoverBtn:{
+      borderRadius: "10px",
+      transition: "ease-in",
+      "&:hover":{
+        borderRadius: "10px",
+       background: "rgb(218, 218, 218, 0.1)",
+       transition: "ease-in",
+      }
+    }
   })
   )
 
@@ -49,12 +59,12 @@ export default function Slide (){
       <div className="dots">
           {[...Array(slider.details().size).keys()].map((idx) => {
             return (
-              <List key={idx}>
+              <List key={idx} style={{margin: "0 10px"}}>
               <ListItem button  onClick={() => {
                     slider.moveToSlideRelative(idx)
                   }}
                   className={"dot" + (currentSlide === idx ? " active" : "")}
-                  classes={{button:classes.btnList}}
+                  classes={{root: classes.hoverBtn}}
                   >
                     {idx === 0? <HomeIcon classes={{root:classes.marginR}}/>:idx === 1? <PersonIcon classes={{root:classes.marginR}}/>:idx === 2? <AppsIcon classes={{root:classes.marginR}}/>:idx === 3? <EmailIcon classes={{root:classes.marginR}}/>: false}
              <ListItemText primary={idx === 0? "Home":idx === 1? "About":idx === 2? "Projects":idx === 3? "Contact": false}/>
@@ -66,20 +76,20 @@ export default function Slide (){
           </div>
          
       )}
-      <div ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide slide"><Home/></div>
-        <div className="keen-slider__slide slide"><About/></div>
-        <div className="keen-slider__slide slide"><Projects/></div> 
-        <div className="keen-slider__slide slide"><Contact/></div>
+      <div ref={sliderRef} className="keen-slider" >
+        <div className="keen-slider__slide slide" ><Home/></div>
+        <div className="keen-slider__slide slide" ><About/></div>
+        <div className="keen-slider__slide slide" ><Projects/></div> 
+        <div className="keen-slider__slide slide" ><Contact/></div>
         
         {slider && (
           <>
             <ArrowUp
-              onClick={(e) => e.stopPropagation() || slider.prev()}
+              onClick={(e:any ) => e.stopPropagation() || slider.prev()}
               disabled={currentSlide === 0}
             />
             <ArrowDown
-              onClick={(e) => e.stopPropagation() || slider.next()}
+              onClick={(e:any) => e.stopPropagation() || slider.next()}
               disabled={currentSlide === slider.details().size - 1}
             />
           </>
@@ -89,7 +99,7 @@ export default function Slide (){
   )
 }
 
-function ArrowUp(props) {
+function ArrowUp(props:any) {
   const disabeld = props.disabled ? " arrow--disabled" : ""
   return (
     <svg
@@ -103,7 +113,7 @@ function ArrowUp(props) {
   )
 }
 
-function ArrowDown(props) {
+function ArrowDown(props:any) {
   const disabled = props.disabled ? " arrow--disabled" : ""
   return (
     <svg

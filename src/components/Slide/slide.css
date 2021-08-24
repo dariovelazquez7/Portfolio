@@ -4,6 +4,7 @@
 }
 .keen-slider {
   height: 100vh;
+  
 }
 
 [class^="slide"],
@@ -20,7 +21,7 @@
 }
 
 .slide {
-    background: rgb(0, 0, 0);
+    background:black;
   }
   
 .navigation-wrapper {
@@ -28,10 +29,7 @@
 }
 
 .dots{
-  background: black;
-  color: white;
-  width: 150px;
-  min-height:100vh;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +51,10 @@
   background: #00C2CB;
 border-radius: 10px;
 }
-
+.dot.active:hover{
+  background: #00C2CB;
+  border-radius: 10px;
+}
 
 .arrow {
   width: 30px;
