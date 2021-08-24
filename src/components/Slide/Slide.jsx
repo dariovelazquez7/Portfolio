@@ -94,7 +94,7 @@ function ArrowUp(props) {
   return (
     <svg
       onClick={props.onClick}
-      className={"arrow arrow--left" + disabeld}
+      className={"arrow arrow--up" + disabeld}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
@@ -104,11 +104,11 @@ function ArrowUp(props) {
 }
 
 function ArrowDown(props) {
-  const disabeld = props.disabled ? " arrow--disabled" : ""
+  const disabled = props.disabled ? " arrow--disabled" : ""
   return (
     <svg
       onClick={props.onClick}
-      className={"arrow arrow--right" + disabeld}
+      className={"arrow arrow--down" + disabled}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >

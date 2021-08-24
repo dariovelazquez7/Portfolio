@@ -1,5 +1,4 @@
 import React from 'react'
-import Sidebar from '../Sidebar/Sidebar'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>

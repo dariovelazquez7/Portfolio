@@ -63,8 +63,10 @@ function Home():JSX.Element {
         </Button>
         </div>
       </main>
-        <div >
-          <img src={logo} alt="Dario velazquez" className="logo"/>
+        <div className="logo">
+          {/* <img src={logo} alt="Dario velazquez" className="logo"/> */}
+          <div className="alpha" id="alpha1">D</div>
+          <div className="aplha" id="alpha2">D</div>
         </div>
     </div>
   );

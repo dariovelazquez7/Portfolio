@@ -11,7 +11,7 @@
   background: grey;
   display: flex;
   align-items: center;
-  justify-content: center;
+ 
   font-size: 50px;
   color: #fff;
   font-weight: 500;
@@ -66,12 +66,12 @@ border-radius: 10px;
   cursor: pointer;
 }
 
-.arrow--left {
+.arrow--up {
   top: 30px;
  
 }
 
-.arrow--right {
+.arrow--down {
   top: auto;
   bottom: 5px;
 }
