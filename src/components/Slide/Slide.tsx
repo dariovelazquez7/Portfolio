@@ -57,7 +57,31 @@ createStyles({
   },
   arrowDisabled: {
     display: "none"  
+  },
+  dots:{  
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    borderRight:"0.5px solid white",
+    padding: "10px",
+  },
+  dot:{
+    border: "none",
+    "&:focus":{
+      outline: "none",
+    }
+  },
+
+  dotActive:{
+    background: "#00C2CB",
+  borderRadius: "10px",
+  "&:hover":{
+    background: "#00C2CB",
+    borderRadius: "10px",
   }
+  },
+
+ 
 })
 )
 
@@ -80,14 +104,14 @@ export default function Slide (){
       <div className="navigation-wrapper"> 
       </div>
       {slider && (
-      <div className="dots">
+      <div className={classes.dots}>
           {[...Array(slider.details().size).keys()].map((idx) => {
             return (
               <List key={idx} style={{margin: "0 10px"}}>
               <ListItem button  onClick={() => {
                     slider.moveToSlideRelative(idx)
                   }}
-                  className={"dot" + (currentSlide === idx ? " active" : "")}
+                  className={(currentSlide === idx ? classes.dotActive: classes.dot )}
                   classes={{root: classes.hoverBtn}}
                   >
                     {

@@ -1,50 +1,19 @@
 .keen-slider {
   height: 100vh;
-  
 }
-
 [class^="slide"],
 [class*=" slide"] {
   background: grey;
   display: flex;
   align-items: center;
- 
   font-size: 50px;
   color: #fff;
   font-weight: 500;
   height: 200px;
   position: relative;
 }
-
 .slide {
-    background:black;
-  }
+  background:black;
+}
   
-.navigation-wrapper {
-  position: relative;
-}
 
-.dots{  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-right:0.5px solid white;
-  padding: 10px;
-}
-
-.dot{
-  border: none;
-}
-
-.dot:focus {
-  outline: none;
-}
-
-.dot.active {
-  background: #00C2CB;
-border-radius: 10px;
-}
-.dot.active:hover{
-  background: #00C2CB;
-  border-radius: 10px;
-}
