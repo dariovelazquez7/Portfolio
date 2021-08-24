@@ -1,7 +1,7 @@
 import React from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import "./test2.css"
+import "./slide.css"
 import About from "../About/About"
 import Contact from '../Contact/Contact';
 import Projects from '../Projects/Projects';
@@ -16,8 +16,7 @@ import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 
 
-
-export default function Slide2 (){
+export default function Slide (){
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
@@ -27,63 +26,30 @@ export default function Slide2 (){
     },
   })
 
-  const colorPrimary = "#00C2CB";
-const widthDraw= 200;
-
-
+  // const colorPrimary = "#00C2CB";
 
   const useStyles = makeStyles((theme) =>
-  createStyles({
-    icon:{
-      margin: theme.spacing(1.5, 0),
-      "&:focus":{
-          color: "red"
-      }
-    },
-    drawer: {
-      width: widthDraw,
-      flexShrink: 0,
-      background:"black",
-    },
-    drawerPaper: {
-      width: widthDraw,
-      minHeight:"100vh",
-      backgroundColor:"black", 
-      display: 'flex',
-      justifyContent: "center",
-    },
-    //   lista:{
-    //     // display: 'flex',
-    //     // justifyContent: "center",
-    //     // flexDirection: "column",
-    //     // borderRight: "1px solid white",
-    //     // // backgroundColor:"black",
-    //     // // color: "white",
-    //     // minHeight:"100vh",   
-    //     padding: "20px 0"
-    // },
+  createStyles({ 
     btnList:{
       borderRadius: "10px",
       margin: "5px 0"
     },
     marginR:{
       marginRight: "10px",
-    }
+    },
   })
   )
 
   const classes = useStyles()
   return (
     <div className="container">
-      <div className="navigation-wrapper">
-        
-        
+      <div className="navigation-wrapper"> 
       </div>
       {slider && (
       <div className="dots">
           {[...Array(slider.details().size).keys()].map((idx) => {
             return (
-              <List>
+              <List key={idx}>
               <ListItem button  onClick={() => {
                     slider.moveToSlideRelative(idx)
                   }}
@@ -94,8 +60,7 @@ const widthDraw= 200;
              <ListItemText primary={idx === 0? "Home":idx === 1? "About":idx === 2? "Projects":idx === 3? "Contact": false}/>
             
            </ListItem>
-           </List>
-            
+           </List>  
             )
           })}
           </div>
@@ -103,7 +68,7 @@ const widthDraw= 200;
       )}
       <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide slide"><Home/></div>
-        <div className="keen-slider__slide slide"> <About/></div>
+        <div className="keen-slider__slide slide"><About/></div>
         <div className="keen-slider__slide slide"><Projects/></div> 
         <div className="keen-slider__slide slide"><Contact/></div>
         
