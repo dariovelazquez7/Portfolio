@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(1),
       textAlign: "initial",
       marginLeft: "70px",
-      fontFamily: "monospace" 
     },
     
     h33:{

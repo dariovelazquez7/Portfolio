@@ -14,7 +14,52 @@ import EmailIcon from '@material-ui/icons/Email';
 import HomeIcon from '@material-ui/icons/Home';
 import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
+const useStyles = makeStyles((theme:Theme) =>
+createStyles({ 
+ container:{
+  display: "flex",
+ },
+  marginR:{
+    marginRight: "10px",
+  },
+  hoverBtn:{
+    borderRadius: "10px",
+    transition: "ease-in",
+    "&:hover":{
+      borderRadius: "10px",
+     background: "rgb(218, 218, 218, 0.1)",
+     transition: "ease-in",
+    }
+  },
+  arrow: {
+    position: "absolute",
+    left: "45%",
+    transform: "translateY(-50%)",
+    WebkitTransform:"translateY(-50%)",
+    fill: "#fff",
+    cursor: "pointer",
+  },
+
+  iconArrowUp:{
+    height:"65px",
+    width: "65px",
+    top: "30px",
+    
+  },
+  iconArrowDown:{
+    height:"65px",
+    width: "65px",
+    bottom: "-40px",
+    top: "auto",
+  },
+  arrowDisabled: {
+    display: "none"  
+  }
+})
+)
 
 
 export default function Slide (){
@@ -29,30 +74,9 @@ export default function Slide (){
     },
   })
 
-
-  // const colorPrimary = "#00C2CB";
-
-  const useStyles = makeStyles((theme:Theme) =>
-  createStyles({ 
-   
-    marginR:{
-      marginRight: "10px",
-    },
-    hoverBtn:{
-      borderRadius: "10px",
-      transition: "ease-in",
-      "&:hover":{
-        borderRadius: "10px",
-       background: "rgb(218, 218, 218, 0.1)",
-       transition: "ease-in",
-      }
-    }
-  })
-  )
-
   const classes = useStyles()
   return (
-    <div className="container">
+    <div className={classes.container}>
       <div className="navigation-wrapper"> 
       </div>
       {slider && (
@@ -66,9 +90,23 @@ export default function Slide (){
                   className={"dot" + (currentSlide === idx ? " active" : "")}
                   classes={{root: classes.hoverBtn}}
                   >
-                    {idx === 0? <HomeIcon classes={{root:classes.marginR}}/>:idx === 1? <PersonIcon classes={{root:classes.marginR}}/>:idx === 2? <AppsIcon classes={{root:classes.marginR}}/>:idx === 3? <EmailIcon classes={{root:classes.marginR}}/>: false}
-             <ListItemText primary={idx === 0? "Home":idx === 1? "About":idx === 2? "Projects":idx === 3? "Contact": false}/>
-            
+                    {
+                    idx === 0? 
+                    <HomeIcon classes={{root:classes.marginR}}/>:
+                    idx === 1? 
+                    <PersonIcon classes={{root:classes.marginR}}/>:
+                    idx === 2?
+                     <AppsIcon classes={{root:classes.marginR}}/>:
+                     idx === 3?
+                      <EmailIcon classes={{root:classes.marginR}}/>: false
+                    }
+             <ListItemText primary={
+                    idx === 0?
+                    "Home":idx === 1? 
+                    "About":idx === 2? 
+                    "Projects":idx === 3? 
+                    "Contact": false}
+                    />
            </ListItem>
            </List>  
             )
@@ -85,7 +123,7 @@ export default function Slide (){
         {slider && (
           <>
             <ArrowUp
-              onClick={(e:any ) => e.stopPropagation() || slider.prev()}
+              onClick={(e:any) => e.stopPropagation() || slider.prev()}
               disabled={currentSlide === 0}
             />
             <ArrowDown
@@ -99,30 +137,29 @@ export default function Slide (){
   )
 }
 
-function ArrowUp(props:any) {
-  const disabeld = props.disabled ? " arrow--disabled" : ""
+interface propsFunction{
+  disabled: boolean,
+  onClick: React.MouseEventHandler<SVGSVGElement>,
+}
+
+function ArrowUp(props:propsFunction) {
+  
+  const classes = useStyles()
+  const disabled = props.disabled
   return (
-    <svg
-      onClick={props.onClick}
-      className={"arrow arrow--up" + disabeld}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
-    </svg>
+    <KeyboardArrowUpIcon onClick={props.onClick}
+    classes={{root: disabled? classes.arrowDisabled: classes.iconArrowUp}}
+    className={classes.arrow}/>
   )
 }
 
-function ArrowDown(props:any) {
-  const disabled = props.disabled ? " arrow--disabled" : ""
+function ArrowDown(props:propsFunction) {
+  const classes = useStyles()
+  const disabled = props.disabled
   return (
-    <svg
-      onClick={props.onClick}
-      className={"arrow arrow--down" + disabled}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-    </svg>
-  )
+  <KeyboardArrowDownIcon onClick={props.onClick}
+  classes={{root: disabled? classes.arrowDisabled: classes.iconArrowDown}} 
+  className={classes.arrow}/>
+  ) 
 }
+
