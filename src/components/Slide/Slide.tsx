@@ -58,13 +58,13 @@ createStyles({
     }
   },
   iconArrowUp:{
-    height:"65px",
-    width: "65px",
+    height:"40px",
+    width: "40px",
     top: "0px",
   },
   iconArrowDown:{
-    height:"65px",
-    width: "65px",
+    height:"40px",
+    width: "40px",
     bottom: "-10px",
     top: "auto",
   },
