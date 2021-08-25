@@ -27,32 +27,7 @@
     color: cyan;
 }
 
-.logo{  
-   position: absolute;
-   right: 100px;
-   top: 100px;
-  }
   
-@media (prefers-reduced-motion: no-preference){
-  .logo{
-    animation: jump 1.5s ease 0s infinite normal;
-  }
-}
- @keyframes jump{ 
-  0%, 20%, 50%, 70%, 100% {
-    transform: translateY(0) translateX(-50%);
-    -webkit-transform: translateY(0) translateX(-50%);
-}
-
-40% {
-    transform: translateY(-3px) translateX(-50%);
-    -webkit-transform: translateY(-3px) translateX(-50%);
-}
-60% {
-    transform: translateY(-1.5px) translateX(-50%);
-    -webkit-transform: translateY(-1.5px) translateX(-50%);
-}
-}
 
 
 

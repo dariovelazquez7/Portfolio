@@ -26,10 +26,10 @@ createStyles({
     marginRight: "10px",
   },
   hoverBtn:{
-    borderRadius: "10px",
+    borderRadius: "20px",
     transition: "ease-in",
     "&:hover":{
-      borderRadius: "10px",
+      borderRadius: "20px",
      background: "rgb(218, 218, 218, 0.1)",
      transition: "ease-in",
     }
@@ -41,18 +41,31 @@ createStyles({
     WebkitTransform:"translateY(-50%)",
     fill: "#fff",
     cursor: "pointer",
+    animation: "$jump 1.5s ease 0s infinite normal",
   },
-
+  "@keyframes jump":{ 
+    "0%, 20%, 50%, 70%, 100%":{
+      transform: "translateY(0) translateX(-50%)",
+      WebkitTransform: "translateY(0) translateX(-50%)",
+    },
+    "40%": {
+      transform: "translateY(-3px) translateX(-50%)",
+      WebkitTransform: "translateY(-3px) translateX(-50%)",
+    },
+    "60%": {
+      transform: "translateY(-1.5px) translateX(-50%)",
+      WebkitTransform: "translateY(-1.5px) translateX(-50%)",
+    }
+  },
   iconArrowUp:{
     height:"65px",
     width: "65px",
-    top: "30px",
-    
+    top: "0px",
   },
   iconArrowDown:{
     height:"65px",
     width: "65px",
-    bottom: "-40px",
+    bottom: "-10px",
     top: "auto",
   },
   arrowDisabled: {
@@ -74,13 +87,13 @@ createStyles({
 
   dotActive:{
     background: "#00C2CB",
-  borderRadius: "10px",
+  borderRadius: "20px",
   "&:hover":{
     background: "#00C2CB",
-    borderRadius: "10px",
+    borderRadius: "20px",
   }
   },
-
+  
  
 })
 )

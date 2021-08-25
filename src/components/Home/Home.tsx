@@ -4,6 +4,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import EmailIcon from '@material-ui/icons/Email';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import foto from "../../img/dario.jpg"
+import Avatar from '@material-ui/core/Avatar';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -16,15 +18,20 @@ const useStyles = makeStyles((theme: Theme) =>
     content: {  
       padding: theme.spacing(1),
       textAlign: "initial",
-      marginLeft: "70px",
+      fontSize: "50px"
     },
     
     h33:{
       fontFamily: "monospace",
       fontSize: "2.8rem"
     },
-    
-  }),
+    photo:{
+    height: "250px",
+    width: "250px",
+    marginLeft: "150px",
+    boxShadow: "0 0 40px 5px cyan",
+    }
+  })
 );
 
 
@@ -53,17 +60,15 @@ function Home():JSX.Element {
         <Button 
         variant="outlined" 
         color="primary" 
-        style={{marginTop: "20px"}}
+        style={{marginTop: "20px", borderRadius: "20px", }}
         startIcon={<EmailIcon />}
         >
           Contactame
         </Button>
         </div>
       </main>
-        <div className="logo">
-          {/* <img src={logo} alt="Dario velazquez" className="logo"/> */}
-          <div id="letra1">D</div>
-          <div id="letra2">D</div>
+        <div >
+          <Avatar src={foto} alt="Dario velazquez" className={classes.photo}/> 
         </div>
     </div>
   );
