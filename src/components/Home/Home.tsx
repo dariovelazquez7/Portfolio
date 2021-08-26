@@ -1,4 +1,3 @@
-import "./Home.css"
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import EmailIcon from '@material-ui/icons/Email';

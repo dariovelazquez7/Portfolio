@@ -55,12 +55,12 @@ function About() {
         <div className={classes.root}>
         <main>
           <header>
-            <Typography className={classes.tipography} variant="h3">
+            <Typography className={classes.tipography} variant="h4">
               Sobre mí...
             </Typography>
           </header>
           <section>
-            <Typography className={classes.tipography}>
+            <Typography variant="body2" className={classes.tipography}>
             Descubrí mi pasión por el desarrollo web hace relativamente poco tiempo, pero me bastó para saber 
             que es a lo que quiero dedicarme el resto de mi vida. Empiezo así una etapa que no va a tener techo, 
             en donde buscaré el óptimo desarrollo personal y profesional dentro de este campo.
@@ -68,7 +68,7 @@ function About() {
             Me gusta ser detallista y aportar desde el lugar que me toca. siempre con criterio y objetividad.
             </Typography>
           </section>
-          <Typography className={classes.tipography} variant="h4">
+          <Typography className={classes.tipography} variant="h5">
             Skills:
           </Typography>
           <section className={classes.containerSkills}>

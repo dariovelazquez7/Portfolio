@@ -33,19 +33,20 @@ createStyles({
       },
       contenedor:{
         display: 'flex',
-        marginTop: "50px"
+        marginTop: "50px",
+        // background: "red",
+        // padding: "50px"
       },
       card:{
-        minWidth: 420,
-        maxWidth: 420,
-        marginRight: "80px"
+        minWidth: 450,
+        maxWidth: 450,
+  
       },
       tipography:{
         fontFamily: "monospace",
         marginBottom:"40px"
       },
       media: { 
-        // paddingTop: '56.25%', // 16:9
         outline: "1px solid black",
         height: 300
        
@@ -61,7 +62,8 @@ createStyles({
         transform: 'rotate(180deg)',
       },
       avatar:{
-        backgroundColor: "#0099a0fa",
+        // backgroundColor: "#0099a0fa",
+        backgroundColor: "grey",
         border: "none",
       },
       iconBtn:{
@@ -75,25 +77,30 @@ createStyles({
 })
 )
   
-  
+
 
 function Projects() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
+    const [expanded2, setExpanded2] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+   
   };
-
-  let num = 4
+  const handleExpandClick2 = () => {
+    setExpanded2(!expanded2);
+  };
  
+  
     return (
     <div className={classes.root}>
-      <Typography className={classes.tipography} variant="h3">
+      <Typography className={classes.tipography} variant="h4">
         Mis proyectos
       </Typography>
       <div className={classes.contenedor}>
-      <Card className={classes.card}>
+        <div>
+      <Card className={classes.card} style={{marginRight: "70px"}}>
       <CardHeader
         avatar={
           <Avatar src={dario} alt="Dario Velazquez"/>
@@ -141,7 +148,8 @@ function Projects() {
         </CardContent>
       </Collapse>
     </Card>
-
+    </div>
+    <div>
     <Card className={classes.card}>
       <CardHeader
       title="Trekker"
@@ -163,7 +171,7 @@ function Projects() {
         className={classes.media}
         image={trekker}
         title="trekker"
-      />
+      /> 
       
       <CardActions disableSpacing>
        <Link target="_blank" rel="noreferrer" href="https://trekker-59f4e.web.app/" >  
@@ -178,28 +186,29 @@ function Projects() {
         </Link>
         <IconButton
           className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
+            [classes.expandOpen]: expanded2,
           })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
+          onClick={handleExpandClick2}
+          aria-expanded={expanded2}
+          aria-label="show more2"
         >
           <ExpandMoreIcon />
         </IconButton>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          
+      <Collapse in={expanded2} timeout="auto" unmountOnExit>
+        <CardContent>  
           <Typography variant="body2" color="textPrimary" component="p">
-          Trabajo grupal donde se desarrolló una aplicacion que permite reservar, publicar y gestionar propiedades.
-           Realizada con React, Redux,  Material Ui, MercadoPago, Node.Js, Mongoose, MongoDB, Firebase, 
-           SCRUM, GitHub, Typescript.
-
+          Aplicación que permite reservar y poner en alquiler propiedades a traves de Mercado Pago, 
+          cuenta con distintos filtrados, panel de administración, creación, edición de post, reseñas, 
+          puntuación, manejo de balance, chat y login mediante google y facebook.
+          Realizada con React, Redux, Material Ui, Node.Js, Mongoose, MongoDB, 
+          Firebase y Typescript.
           </Typography>
           
         </CardContent>
       </Collapse>
     </Card>
+    </div>
     </div>
         </div>
     )
