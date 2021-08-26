@@ -11,13 +11,13 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import LanguageIcon from '@material-ui/icons/Language';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import dario from "../../img/dario.jpg"
 import trekker from "../../img/trekker.png"
 import pokeapp from "../../img/pokeapp.png"
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import Link from '@material-ui/core/Link';
+import DesktopMacIcon from '@material-ui/icons/DesktopMac';
 
 
 
@@ -29,18 +29,17 @@ createStyles({
         minHeight:"100vh",
         textAlign: "initial",
         justifyContent: "center",
-        transition: '0.3s',
+       
+      },
+      card:{
+        minWidth: 400,
+        maxWidth: 400,
+        minHeight: 400,
+       
       },
       contenedor:{
         display: 'flex',
         marginTop: "50px",
-        // background: "red",
-        // padding: "50px"
-      },
-      card:{
-        minWidth: 450,
-        maxWidth: 450,
-  
       },
       tipography:{
         fontFamily: "monospace",
@@ -100,7 +99,7 @@ function Projects() {
       </Typography>
       <div className={classes.contenedor}>
         <div>
-      <Card className={classes.card} style={{marginRight: "70px"}}>
+      <Card className={classes.card} style={{marginRight: "70px"}} raised>
       <CardHeader
         avatar={
           <Avatar src={dario} alt="Dario Velazquez"/>
@@ -118,7 +117,7 @@ function Projects() {
       <CardActions disableSpacing >
       <Link>
         <IconButton aria-label="webpage" className={classes.iconBtnNt}>
-          <LanguageIcon />
+          <DesktopMacIcon />
         </IconButton>
         </Link >
        <Link target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7/PokeApp" >
@@ -150,7 +149,7 @@ function Projects() {
     </Card>
     </div>
     <div>
-    <Card className={classes.card}>
+    <Card className={classes.card} raised>
       <CardHeader
       title="Trekker"
       subheader="Julio, 2021"
@@ -176,7 +175,7 @@ function Projects() {
       <CardActions disableSpacing>
        <Link target="_blank" rel="noreferrer" href="https://trekker-59f4e.web.app/" >  
           <IconButton aria-label="webpage" className={classes.iconBtn}>
-            <LanguageIcon />
+            <DesktopMacIcon />
           </IconButton>
         </Link>
        <Link target="_blank" rel="noreferrer" href="https://github.com/davidcesaretti/reservar" >

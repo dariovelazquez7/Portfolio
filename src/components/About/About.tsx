@@ -29,7 +29,7 @@ createStyles({
       tipography:{
         fontFamily: "monospace",
         maxWidth: "800px",
-        marginBottom:"40px"
+        marginBottom:"40px",
       },
       icons:{
         width: "50px",
@@ -38,11 +38,28 @@ createStyles({
       },
       containerSkills:{
         maxWidth: "800px",
-      height: "300px",
+        height: "200px",
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr",
-        gridTemplateRows: "1fr 1fr 1fr 1fr 1fr",
-      }
+        gridTemplateRows: "1fr 1fr",
+        textAlign: "center",
+      justifyItems: "start",
+      },
+      cursor:{
+        position:"absolute",
+        width:0,
+        background: "black",
+        borderLeft: "2px solid rgba(255, 255, 255, 0.75)",
+        animation: "$cursor 1.2s infinite normal ",
+      },
+      "@keyframes cursor":{
+        from: {
+          borderLeftColor: "rgba(255, 255, 255, 0.75)"
+        },
+        to: {
+          borderLeft: "none"
+        }
+  }
 })
 )
   
@@ -65,7 +82,7 @@ function About() {
             que es a lo que quiero dedicarme el resto de mi vida. Empiezo así una etapa que no va a tener techo, 
             en donde buscaré el óptimo desarrollo personal y profesional dentro de este campo.
             Soy apasionado por lo que emprendo, critico de mi mismo, y con buena capacidad para trabajar en equipo.
-            Me gusta ser detallista y aportar desde el lugar que me toca. siempre con criterio y objetividad.
+            Me gusta ser detallista y aportar desde el lugar que me toca. siempre con criterio y objetividad <span className={classes.cursor}>&#160;</span>
             </Typography>
           </section>
           <Typography className={classes.tipography} variant="h5">
@@ -92,8 +109,8 @@ function About() {
               <img src={redux} alt="" className={classes.icons}/>
               <h3>Redux</h3>
             </div>
-            <div>
-              <img src={express} alt="" style={{width:"100px", height:"55px", marginLeft:"-20px"}} />
+            <div style={{marginLeft:"-22px"}}>
+              <img src={express} alt="" style={{width:"100px", height:"55px", }} />
               <h3>Express</h3>
             </div>
             <div>

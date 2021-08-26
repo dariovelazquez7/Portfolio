@@ -76,7 +76,6 @@ createStyles({
     flexDirection: "column",
     justifyContent: "center",
     borderRight:"0.5px solid white",
-    padding: "10px",
   },
   dot:{
     border: "none",

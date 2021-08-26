@@ -15,19 +15,19 @@ const useStyles = makeStyles((theme: Theme) =>
       minHeight:"100vh",
     },
     content: {  
-      padding: theme.spacing(1),
+      // padding: theme.spacing(1),
       textAlign: "initial",
       fontSize: "50px"
     },
     
     h33:{
       fontFamily: "monospace",
-      fontSize: "2.8rem"
+      
     },
     photo:{
     height: "250px",
     width: "250px",
-    marginLeft: "150px",
+    marginLeft: "60px",
     boxShadow: "0 0 40px 5px cyan",
     }
   })
