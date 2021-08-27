@@ -50,7 +50,7 @@ createStyles({
         width:0,
         background: "black",
         borderLeft: "2px solid rgba(255, 255, 255, 0.75)",
-        animation: "$cursor 1.2s infinite normal ",
+        animation: "$cursor 1s infinite normal ",
       },
       "@keyframes cursor":{
         from: {

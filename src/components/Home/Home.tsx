@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import foto from "../../img/dario.jpg"
 import Avatar from '@material-ui/core/Avatar';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -56,6 +57,7 @@ function Home():JSX.Element {
         </Typography>
         </section>
         <div>
+          <Link to="/form">
         <Button 
         variant="outlined" 
         color="primary" 
@@ -64,6 +66,7 @@ function Home():JSX.Element {
         >
           Contactame
         </Button>
+        </Link>
         </div>
       </main>
         <div >
