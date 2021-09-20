@@ -16,7 +16,9 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
         width: "33%",
         background: "#f1f1f1",
+       
         height: "500px",
+        
       '& .MuiTextField-root': {
         margin: theme.spacing(1),
         width: '25ch',
@@ -52,7 +54,7 @@ export default function Form() {
   };
 
   return (
-    <form className={classes.root} noValidate autoComplete="off" action="https://formsubmit.co/xtateebieem_km27@hotmail.com" method="POST">
+    <form className={classes.root} noValidate autoComplete="off">
       <Grid
         container
         direction="column"
@@ -69,7 +71,7 @@ export default function Form() {
           type="text"
           onChange={handleChange}
           variant="outlined"
-          required
+          
         />
         <TextField
          
@@ -80,7 +82,7 @@ export default function Form() {
           onChange={handleChange}
           multiline
           variant="outlined"
-          required
+        
         />
         <TextField
           
@@ -92,10 +94,7 @@ export default function Form() {
           defaultValue=""
           variant="outlined"
         />
-        <input type="hidden" name="_next" value="http://localhost:3000/form"/>
-        <input type="hidden" name="_captcha" value="false"></input>
-        <input type="hidden" name="_subject" value="Nuevo correo desde tu portfolio!"></input>
-      <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
+      <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>Enviar</Button>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Mensaje enviado correctamente!

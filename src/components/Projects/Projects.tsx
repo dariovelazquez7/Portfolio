@@ -61,8 +61,7 @@ createStyles({
         transform: 'rotate(180deg)',
       },
       avatar:{
-        // backgroundColor: "#0099a0fa",
-        backgroundColor: "grey",
+        backgroundColor: "#00C2CB",
         border: "none",
       },
       iconBtn:{
@@ -154,7 +153,7 @@ function Projects() {
       title="Trekker"
       subheader="Julio, 2021"
         avatar={
-          <AvatarGroup max={4} classes={{avatar: classes.avatar}}>
+          <AvatarGroup max={2} classes={{avatar: classes.avatar}}>
             <Avatar alt="Dario Velazquez" src={dario} />
             <Avatar alt="Walter Cuberas " src="https://avatars.githubusercontent.com/u/78507317?v=4" />
             <Avatar alt="Ulises Scardino" src="https://avatars.githubusercontent.com/u/79987045?v=4" />
