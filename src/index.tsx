@@ -8,13 +8,13 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import {theme} from './Theme'; 
 
 ReactDOM.render(
-  <React.StrictMode>
+  
     <ThemeProvider theme={theme}>
     <BrowserRouter>
     <App />
     </BrowserRouter>
-    </ThemeProvider>
-  </React.StrictMode>,
+    </ThemeProvider>,
+ 
   document.getElementById('root')
 );
 

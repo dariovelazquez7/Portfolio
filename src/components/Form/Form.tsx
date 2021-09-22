@@ -1,11 +1,11 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { Grid } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
+import axios from 'axios';
 
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
         width: "33%",
         background: "#f1f1f1",
-       
         height: "500px",
         
       '& .MuiTextField-root': {
@@ -34,6 +33,9 @@ export default function Form() {
       email: "",
       message: ""
   });
+
+  
+
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +43,9 @@ export default function Form() {
   };
 
   const handleSubmit = (e:any) => {
+    e.preventDefault()
     setOpen(true)  
+    axios.post("http://localhost:3001/sendEmail", value)
     
   }
 
@@ -54,7 +58,7 @@ export default function Form() {
   };
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <form className={classes.root} noValidate autoComplete="off"  >
       <Grid
         container
         direction="column"
@@ -101,10 +105,6 @@ export default function Form() {
         </Alert>
       </Snackbar>
       </Grid>
-    
-    {/* <input type="text" name="name" required/>
-     <input type="email" name="email" required/>
-     <button type="submit">Send</button> */}
     </form>
   );
 }
