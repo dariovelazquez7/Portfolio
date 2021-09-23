@@ -33,19 +33,75 @@ export default function Form() {
       email: "",
       message: ""
   });
-
-  
-
   const [open, setOpen] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
+
+  const [textHelper, setTextHelper] = React.useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+ 
+  const [fields, setFields] = React.useState({
+    name: false,
+    email: false,
+    message: false
+  })
+
+  const emailRegex =/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue({...value, [event.target.name]: event.target.value})
+
+      if(value.name !== ""){
+        setFields({...fields, name: false})
+        setTextHelper({...textHelper, name: ""})
+      }
+
+      if(!emailRegex.test(value.email)){
+      setFields({...fields, email: true})
+      setTextHelper({...textHelper, email: "email invalido"})
+    
+      }else if(emailRegex.test(value.email)){
+      setFields({...fields, email: false})
+      setTextHelper({...textHelper, email: ""})
+    }
+  
+    if(value.message.length > 0){
+      setFields({...fields, message: false})
+      setTextHelper({...textHelper, message: ""})
+    }
+   console.log(fields.name)
   };
 
+  const clearForm = () => {
+    return (document.getElementById("myForm") as HTMLFormElement).reset() 
+  }
+
   const handleSubmit = (e:any) => {
-    e.preventDefault()
-    setOpen(true)  
-    axios.post("http://localhost:3001/sendEmail", value)
+   
+    if(value.name === ""){
+      e.preventDefault()
+      setOpen2(true);
+      setFields({...fields, name: true})
+      setTextHelper({...textHelper, name: "Porfavor ingrese su nombre"})
+      return;
+    }
+    if(value.message === ""){
+      e.preventDefault()
+      setOpen2(true);
+      setFields({...fields, message: true})
+      setTextHelper({...textHelper, message: "Porfavor ingrese un mensaje"})
+      return;
+    } 
+    if(value.message.length > 0 && value.name.length > 0) {
+      setOpen2(true)  
+      axios.post("http://localhost:3001/sendEmail", value)
+      clearForm()
+
+    }
+    
+      setOpen(true)
     
   }
 
@@ -53,12 +109,12 @@ export default function Form() {
     if (reason === 'clickaway') {
       return;
     }
-
     setOpen(false);
+    setOpen2(false);
   };
 
   return (
-    <form className={classes.root} noValidate autoComplete="off"  >
+    <form className={classes.root} noValidate autoComplete="off" id="myForm" >
       <Grid
         container
         direction="column"
@@ -67,7 +123,9 @@ export default function Form() {
         >
         
         <TextField
-          
+        required
+        error={fields.name}
+        helperText={textHelper.name}
           name="name"
           label="Nombre y Apellido"
           multiline
@@ -75,10 +133,12 @@ export default function Form() {
           type="text"
           onChange={handleChange}
           variant="outlined"
-          
         />
+
         <TextField
-         
+        required
+          error={fields.email}
+          helperText={textHelper.email}
           label="Email"
           placeholder="Indique su email"
           type="email"
@@ -86,24 +146,35 @@ export default function Form() {
           onChange={handleChange}
           multiline
           variant="outlined"
-        
         />
+        
         <TextField
-          
+        required
+          error={fields.message}
+          helperText={textHelper.message}
           label="Mensaje"
           name="message"
           onChange={handleChange}
           multiline
           rows={4}
-          defaultValue=""
+          
           variant="outlined"
         />
       <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>Enviar</Button>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
+      {open?<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Alert onClose={handleClose} severity={"success"}>
           Mensaje enviado correctamente!
         </Alert>
-      </Snackbar>
+      </Snackbar>:open2?
+      <Snackbar open={open2} autoHideDuration={6000} onClose={handleClose}>
+      <Alert onClose={handleClose} severity={"warning"}>
+        Porfavor complete todos los campos
+      </Alert>
+      </Snackbar>: false}
+     
+
+
+        
       </Grid>
     </form>
   );
