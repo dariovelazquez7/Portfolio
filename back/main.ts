@@ -24,13 +24,13 @@ const corsOptions ={
 app.use(cors(corsOptions)) 
 
 app.post("/sendEmail",  async(req:Request,res:Response) => {
-    const {name, email, message} = req.body
-    const contHTML= `<h2> User info</h2>
+    const {name, email, msj} = req.body
+    const contHTML= `<h3> Contact info:</h3>
      <ul>
      <li>Name: ${name} </li>
      <li>Email: ${email} </li>
      </ul>
-     <p>Message: ${message}</p>
+     <h4>Message: ${msj}</h4>
      `
      const transporter= nodemailer.createTransport({
         host: "smtp.gmail.com",

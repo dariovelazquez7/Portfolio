@@ -1,5 +1,6 @@
 import React from 'react'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import Form from '../Form/Form';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -27,7 +28,7 @@ function Contact() {
           
             <main className={classes.content}>
           <section>
-              redes de contacto y email
+              <Form/>
           </section>
           </main>
         </div>

@@ -56,18 +56,6 @@ function Home():JSX.Element {
           Bienvenidos a mi portfolio
         </Typography>
         </section>
-        <div>
-          <Link to="/form">
-        <Button 
-        variant="outlined" 
-        color="primary" 
-        style={{marginTop: "20px", borderRadius: "20px", }}
-        startIcon={<EmailIcon />}
-        >
-          Contactame
-        </Button>
-        </Link>
-        </div>
       </main>
         <div >
           <Avatar src={foto} alt="Dario velazquez" className={classes.photo}/> 
