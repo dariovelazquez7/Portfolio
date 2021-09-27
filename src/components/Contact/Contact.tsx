@@ -5,6 +5,8 @@ import linkedin from "../../img/linkedin.png";
 import github from "../../img/github.png";
 import Typography from '@material-ui/core/Typography';
 import GetAppIcon from '@material-ui/icons/GetApp';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 
 const primaryColor= "#198CD8"
@@ -55,13 +57,35 @@ createStyles({
       divslogo:{
         display: "flex",
         alignItems: "center",
+        transition:  "0.4s ease",
+        "&:hover":{
+          transition:  "0.4s ease",
+          transform: "translateY(3px)",
+          transformOrigin: "center center",
+        }
       },
+      
       tipographyLogo:{
         fontFamily: "monospace", 
         marginLeft:"100px",
         marginRight: "30px",
         
       },
+      git:{
+        display:"flex",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "50%",
+        background: "white",
+        width: "65px",
+        height:"63px",
+        transition:  "0.4s ease",
+        "&:hover":{
+          transition:  "0.4s ease",
+          transform: "translateY(3px)",
+          transformOrigin: "center center",
+        }
+      }
 })
 )
   
@@ -93,9 +117,10 @@ function Contact() {
                   <img src={linkedin} alt="https://www.linkedin.com/in/velazquez-dario/" className={classes.logo}/>
                   </a>
                 </div>
-                <div className={classes.divslogo}>
+                <div className={classes.git}>
                 <a target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7">
-                  <img src={github} alt="https://github.com/dariovelazquez7" className={classes.logo}/>
+                  {/* <img src={github} alt="https://github.com/dariovelazquez7" className={classes.logo}/> */}
+                  <GitHubIcon style={{fontSize:"65px", color:"#198CD8"}}/> 
                 </a>
                 </div>
                 <div className={classes.divslogo}> 

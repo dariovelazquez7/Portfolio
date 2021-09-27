@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
     height: "250px",
     width: "250px",
     marginLeft: "60px",
-    boxShadow: "0 0 40px 5px #198CD8",
+    boxShadow: "0 0 6px 5px #198CD8",
     }
   })
 );
@@ -47,11 +47,16 @@ function Home():JSX.Element {
         <Typography variant="h3" className={classes.h33}>
           soy Dario,
         </Typography>
-        <Typography variant="h3" className={classes.h33}>
+        <Typography variant="h3" className={classes.h33} style={{color:"#198CD8"}}>
           Full Stack Developer.
         </Typography>
-        <Typography variant="overline" style={{color:"gray"}}>
-          Bienvenidos a mi portfolio
+        <Typography variant="h6" className={classes.h33} style={{ marginTop:"20px"}}>
+        ✅ Constante aprendizaje. {<br/>}
+        ✅ Trabajo en equipo. {<br/>}
+        ✅ Soluciones.
+        </Typography>
+        <Typography variant="overline" className={classes.h33} style={{color:"gray", fontSize:"18px"}}> 
+        Bienvenidos a mi portfolio
         </Typography>
         </section>
       </main>

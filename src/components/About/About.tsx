@@ -33,7 +33,22 @@ createStyles({
       icons:{
         width: "50px",
         height:"50px",
-        
+        transition:  "0.4s ease",
+        "&:hover":{
+          transition:  "0.4s ease",
+          transform: "translateY(2px)",
+          transformOrigin: "center center",
+        }
+      },
+      especialExpress:{
+        width:"100px", 
+        height:"55px",
+        transition:  "0.4s ease",
+        "&:hover":{
+          transition:  "0.4s ease",
+          transform: "translateY(2px)",
+          transformOrigin: "center center",
+        }
       },
       containerSkills:{
         maxWidth: "800px",
@@ -109,7 +124,7 @@ function About() {
               <h3>Redux</h3>
             </div>
             <div style={{marginLeft:"-22px"}}>
-              <img src={express} alt="" style={{width:"100px", height:"55px", }} />
+              <img src={express} alt="" className={classes.especialExpress} />
               <h3>Express</h3>
             </div>
             <div>

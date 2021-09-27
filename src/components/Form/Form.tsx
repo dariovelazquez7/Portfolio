@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
        background:"#f8feff",
        borderRadius: "8px",
-       minHeight: "510px"
+       minHeight: "530px"
     },
     snack:{
       position: "relative",
       bottom: 0,
-      top: 150
+      top: 120
     }
     
   }),
@@ -73,12 +73,12 @@ export default function Form() {
               touched,
               values
             }) => (
-              <form onSubmit={handleSubmit} >
+              <form onSubmit={handleSubmit} style={{marginTop:"30px"}}>
                 <Box sx={{ mb: 3 }} >
                   <Typography
                     color="textPrimary"
                     variant="h4"
-                    style={{marginTop: "10px"}}
+                    style={{marginTop: "10px", fontFamily: "monospace",}}
                   >
                     Envíame un email
                   </Typography>
@@ -86,12 +86,12 @@ export default function Form() {
                     color="textSecondary"
                     gutterBottom
                     variant="body2"
+                    style={{fontFamily: "monospace",}}
                   >
                     Completa todos los campos...
                   </Typography>
                 </Box>
                 <TextField
-                
                   error={Boolean(touched.name && errors.name)}
                   fullWidth
                   helperText={touched.name && errors.name}
@@ -102,10 +102,7 @@ export default function Form() {
                   onChange={handleChange}
                   value={values.name}
                   variant="outlined"
-                  
                 />
-               
-                
                 <TextField
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
@@ -118,6 +115,7 @@ export default function Form() {
                   type="email"
                   value={values.email}
                   variant="outlined"
+                  style={{fontFamily: "monospace",}}
                 />
                 <TextField
                   error={Boolean(touched.msj && errors.msj)}
@@ -134,12 +132,9 @@ export default function Form() {
                   multiline
                   rows={4}
                 />
-                
-                
                 <Box sx={{ py: 2 }}>
                   <Button
                     color="primary"
-                    
                     fullWidth
                     size="large"
                     type="submit"
@@ -147,15 +142,12 @@ export default function Form() {
                   >
                     Enviar
                   </Button>
-                  
                     <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} className={classes.snack}>
                     <Alert onClose={handleClose} severity={"success"} >
                         Mensaje enviado correctamente!
                     </Alert>
-                    </Snackbar>
-                   
+                    </Snackbar>    
                 </Box>
-                
               </form>
             )}
           </Formik>

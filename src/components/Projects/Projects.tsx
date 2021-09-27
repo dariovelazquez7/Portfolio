@@ -18,6 +18,8 @@ import pokeapp from "../../img/pokeapp.png"
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import Link from '@material-ui/core/Link';
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+
 
 
 const primaryColor= "#198CD8"
@@ -35,7 +37,8 @@ createStyles({
         minWidth: 400,
         maxWidth: 400,
         minHeight: 400,
-       
+        marginLeft: "8px",
+        
       },
       contenedor:{
         display: 'flex',
@@ -118,12 +121,17 @@ function Projects() {
         <IconButton aria-label="webpage" className={classes.iconBtnNt}>
           <DesktopMacIcon />
         </IconButton>
-        </Link >
-       <Link target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7/PokeApp" >
+      </Link >
+      <Link target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7/PokeApp" >
         <IconButton aria-label="github" className={classes.iconBtn}>
           <GitHubIcon />
         </IconButton>
-        </Link >
+      </Link >
+      <Link target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=FxeqR472iZw&t=34s" >
+        <IconButton aria-label="webpage" className={classes.iconBtn}>
+          <YouTubeIcon style={{fontSize:"29px"}}/>
+        </IconButton>
+      </Link >
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -153,7 +161,7 @@ function Projects() {
       title="Trekker"
       subheader="Julio, 2021"
         avatar={
-          <AvatarGroup max={2} classes={{avatar: classes.avatar}}>
+          <AvatarGroup max={4} classes={{avatar: classes.avatar}}>
             <Avatar alt="Dario Velazquez" src={dario} />
             <Avatar alt="Walter Cuberas " src="https://avatars.githubusercontent.com/u/78507317?v=4" />
             <Avatar alt="Ulises Scardino" src="https://avatars.githubusercontent.com/u/79987045?v=4" />
@@ -180,6 +188,11 @@ function Projects() {
        <Link target="_blank" rel="noreferrer" href="https://github.com/davidcesaretti/reservar" >
           <IconButton aria-label="github" className={classes.iconBtn}>
             <GitHubIcon />
+          </IconButton>
+        </Link>
+        <Link target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=ATsC3wqbLN4" >
+          <IconButton aria-label="webpage" className={classes.iconBtn}>
+            <YouTubeIcon style={{fontSize:"29px"}} />
           </IconButton>
         </Link>
         <IconButton
