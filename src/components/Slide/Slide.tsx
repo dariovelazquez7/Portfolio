@@ -17,6 +17,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
+const primaryColor= "#198CD8"
 const useStyles = makeStyles((theme:Theme) =>
 createStyles({ 
  container:{
@@ -85,10 +86,10 @@ createStyles({
   },
 
   dotActive:{
-    background: "#00C2CB",
+    background: primaryColor,
   borderRadius: "20px",
   "&:hover":{
-    background: "#00C2CB",
+    background: primaryColor,
     borderRadius: "20px",
   }
   },

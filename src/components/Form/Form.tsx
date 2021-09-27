@@ -8,6 +8,7 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 
+
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
@@ -16,9 +17,14 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
        background:"#f8feff",
-       borderRadius: "8px"
+       borderRadius: "8px",
+       minHeight: "510px"
     },
-    
+    snack:{
+      position: "relative",
+      bottom: 0,
+      top: 150
+    }
     
   }),
 );
@@ -37,7 +43,7 @@ export default function Form() {
 
   return (
     
-    <Container maxWidth="sm" className={classes.root}>
+    <Container maxWidth="xs" className={classes.root}>
     <Formik
             initialValues={{
               email: '',
@@ -46,8 +52,8 @@ export default function Form() {
             }}
             validationSchema={
             Yup.object().shape({
-              email: Yup.string().email('Debe ser un email valido').max(255, "Tu gato está encima del teclado?").required('Su email es requerido'),
-              name: Yup.string().max(255, "Que nombre tan largo...").required('Su nombre y apellido son requeridos'),
+              name: Yup.string().max(100, "Que nombre tan largo...").required('Su nombre y apellido son requeridos'),
+              email: Yup.string().email('Debe ser un email valido').max(100, "Tu gato está encima del teclado?").required('Su email es requerido'),
               msj: Yup.string().max(255, "Mucho texto.jpg").required('No olvide dejar un mensaje'),
             })
           }
@@ -71,7 +77,8 @@ export default function Form() {
                 <Box sx={{ mb: 3 }} >
                   <Typography
                     color="textPrimary"
-                    variant="h3"
+                    variant="h4"
+                    style={{marginTop: "10px"}}
                   >
                     Envíame un email
                   </Typography>
@@ -80,7 +87,7 @@ export default function Form() {
                     gutterBottom
                     variant="body2"
                   >
-                    Completa los campos y contáctame...
+                    Completa todos los campos...
                   </Typography>
                 </Box>
                 <TextField
@@ -141,8 +148,8 @@ export default function Form() {
                     Enviar
                   </Button>
                   
-                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                    <Alert onClose={handleClose} severity={"success"}>
+                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} className={classes.snack}>
+                    <Alert onClose={handleClose} severity={"success"} >
                         Mensaje enviado correctamente!
                     </Alert>
                     </Snackbar>

@@ -72,7 +72,7 @@ function About() {
         <main>
           <header>
             <Typography className={classes.tipography} variant="h4">
-              Sobre mí...
+              Sobre mí:
             </Typography>
           </header>
           <section>
@@ -81,7 +81,7 @@ function About() {
             que es a lo que quiero dedicarme el resto de mi vida. Empiezo así una etapa que no va a tener techo, 
             en donde buscaré el óptimo desarrollo personal y profesional dentro de este campo.
             Soy apasionado por lo que emprendo, critico de mi mismo, y con buena capacidad para trabajar en equipo.
-            Me gusta ser detallista y aportar desde el lugar que me toca. siempre con criterio y objetividad <span className={classes.cursor}>&#160;</span>
+            Me gusta ser detallista y aportar desde el lugar que me toca. siempre con criterio y objetividad... <span className={classes.cursor}>&#160;</span>
             </Typography>
           </section>
           <Typography className={classes.tipography} variant="h5">

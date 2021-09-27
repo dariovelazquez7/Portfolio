@@ -1,11 +1,9 @@
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import EmailIcon from '@material-ui/icons/Email';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import foto from "../../img/dario.jpg"
 import Avatar from '@material-ui/core/Avatar';
-import { Link } from 'react-router-dom';
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -29,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
     height: "250px",
     width: "250px",
     marginLeft: "60px",
-    boxShadow: "0 0 40px 5px cyan",
+    boxShadow: "0 0 40px 5px #198CD8",
     }
   })
 );

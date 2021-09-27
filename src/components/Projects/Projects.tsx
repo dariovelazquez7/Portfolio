@@ -20,7 +20,7 @@ import Link from '@material-ui/core/Link';
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
 
 
-
+const primaryColor= "#198CD8"
 const useStyles = makeStyles((theme: Theme) =>
 createStyles({
     root: {
@@ -61,7 +61,7 @@ createStyles({
         transform: 'rotate(180deg)',
       },
       avatar:{
-        backgroundColor: "#00C2CB",
+        backgroundColor: primaryColor,
         border: "none",
       },
       iconBtn:{
@@ -94,7 +94,7 @@ function Projects() {
     return (
     <div className={classes.root}>
       <Typography className={classes.tipography} variant="h4">
-        Mis proyectos
+        Mis proyectos:
       </Typography>
       <div className={classes.contenedor}>
         <div>
