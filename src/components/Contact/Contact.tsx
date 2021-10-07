@@ -2,11 +2,10 @@ import React from 'react'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import Form from '../Form/Form';
 import linkedin from "../../img/linkedin.png";
-import github from "../../img/github.png";
 import Typography from '@material-ui/core/Typography';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
 
 
 const primaryColor= "#198CD8"

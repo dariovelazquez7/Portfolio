@@ -102,7 +102,7 @@ createStyles({
 export default function Slide (){
   
 
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState<Number>(0)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     vertical: true,
@@ -139,10 +139,10 @@ export default function Slide (){
                     }
              <ListItemText primary={
                     idx === 0?
-                    "Home":idx === 1? 
-                    "About":idx === 2? 
-                    "Projects":idx === 3? 
-                    "Contact": false}
+                    "Inicio":idx === 1? 
+                    "Sobre mi":idx === 2? 
+                    "Proyectos":idx === 3? 
+                    "Contacto": false}
                     />
            </ListItem>
            </List>  
