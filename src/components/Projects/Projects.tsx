@@ -19,7 +19,7 @@ import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import Link from '@material-ui/core/Link';
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
 import YouTubeIcon from '@material-ui/icons/YouTube';
-
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 
 const primaryColor= "#198CD8"
@@ -34,7 +34,7 @@ createStyles({
        
       },
       card:{
-        minWidth: 400,
+        minWidth: 420,
         maxWidth: 400,
         minHeight: 400,
         marginLeft: "8px",
@@ -54,6 +54,8 @@ createStyles({
        
       },
       expand: {
+        height: "40px",
+        width:"40px",
         transform: 'rotate(0deg)',
         marginLeft: 'auto',
         transition: theme.transitions.create('transform', {
@@ -63,9 +65,10 @@ createStyles({
       expandOpen: {
         transform: 'rotate(180deg)',
       },
-      avatar:{
-        backgroundColor: primaryColor,
-        border: "none",
+      avatarHeader:{
+        flex: "0 0 auto",
+      marginRight: "0",
+      
       },
       iconBtn:{
         color: "black"
@@ -74,7 +77,15 @@ createStyles({
         color: "#80808094",
         cursor: "not-allowed"
       },
-      
+      avatarOn:{
+        display: "flex"
+      },
+      avatarOff:{
+        display: "none"
+      },
+      boderAvatarGroup:{
+        border: "none"
+      }
 })
 )
   
@@ -84,13 +95,18 @@ function Projects() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const [expanded2, setExpanded2] = React.useState(false);
-
+    const [expanded3, setExpanded3] = React.useState(false);
+    const [clicked, setClicked] = React.useState(false);
+console.log(clicked)
   const handleExpandClick = () => {
     setExpanded(!expanded);
    
   };
   const handleExpandClick2 = () => {
     setExpanded2(!expanded2);
+  };
+  const handleExpandClick3 = () => {
+    setExpanded3(!expanded3);
   };
  
   
@@ -159,18 +175,37 @@ function Projects() {
     <Card className={classes.card} raised>
       <CardHeader
       title="Trekker"
+      classes={{avatar: classes.avatarHeader}}
       subheader="Julio, 2021"
         avatar={
-          <AvatarGroup max={4} classes={{avatar: classes.avatar}}>
+          <div style={{display:"flex"}}>
             <Avatar alt="Dario Velazquez" src={dario} />
-            <Avatar alt="Walter Cuberas " src="https://avatars.githubusercontent.com/u/78507317?v=4" />
-            <Avatar alt="Ulises Scardino" src="https://avatars.githubusercontent.com/u/79987045?v=4" />
-            <Avatar alt="Pedro Vaquer" src="https://avatars.githubusercontent.com/u/77697735?v=4"/>
-            <Avatar alt="Mariano Villafuerte" src="https://avatars.githubusercontent.com/u/68519005?v=4" />
-            <Avatar alt="Veronica Cardozo" src="https://avatars.githubusercontent.com/u/8940512?v=4" />
-            <Avatar alt="David Cesaretti" src="https://avatars.githubusercontent.com/u/74600056?v=4" />
-            <Avatar alt="Jesus Gedler" src="https://avatars.githubusercontent.com/u/77858557?v=4" />
-        </AvatarGroup>
+            <Collapse in={expanded3} timeout="auto" unmountOnExit >
+            <span className={ clicked? classes.avatarOn: classes.avatarOff}>
+              <AvatarGroup max={7} classes={{avatar: classes.boderAvatarGroup}}>
+                <Avatar alt="Walter Cuberas " src="https://avatars.githubusercontent.com/u/78507317?v=4" />
+                <Avatar alt="Ulises Scardino" src="https://avatars.githubusercontent.com/u/79987045?v=4" />
+                <Avatar alt="Pedro Vaquer" src="https://avatars.githubusercontent.com/u/77697735?v=4"/>
+                <Avatar alt="Mariano Villafuerte" src="https://avatars.githubusercontent.com/u/68519005?v=4" />
+                <Avatar alt="Veronica Cardozo" src="https://avatars.githubusercontent.com/u/8940512?v=4" />
+                <Avatar alt="David Cesaretti" src="https://avatars.githubusercontent.com/u/74600056?v=4" />
+                <Avatar alt="Jesus Gedler" src="https://avatars.githubusercontent.com/u/77858557?v=4" />
+              </AvatarGroup>
+            </span>
+            </Collapse>
+            <span onClick={() => setClicked(!clicked)}>
+              <IconButton
+                className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded3,
+                  })}
+                onClick={handleExpandClick3}
+                aria-expanded={expanded3}
+                aria-label="show more"
+                >
+                  <KeyboardArrowRightIcon />
+              </IconButton>
+            </span>
+          </div>
         }          
       />
       <CardMedia

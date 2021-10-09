@@ -61,7 +61,7 @@ function Home():JSX.Element {
         </section>
       </main>
         <div >
-          <Avatar src={foto} alt="Dario velazquez" className={classes.photo}/> 
+          {/* <Avatar src={foto} alt="Dario velazquez" className={classes.photo}/>  */}
         </div>
     </div>
   );
