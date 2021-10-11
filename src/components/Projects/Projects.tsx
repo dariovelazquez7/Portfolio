@@ -78,7 +78,7 @@ createStyles({
         cursor: "not-allowed"
       },
       avatarOn:{
-        display: "flex"
+        display: "flex",
       },
       avatarOff:{
         display: "none"
@@ -120,9 +120,10 @@ console.log(clicked)
       <Card className={classes.card} style={{marginRight: "70px"}} raised>
       <CardHeader
         avatar={
-          <Avatar src={dario} alt="Dario Velazquez"/>
+          <Link target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7" >
+              <Avatar alt="Dario Velazquez" src={dario} />
+          </Link>
         }
-        
         title="PokeApp"
         subheader="Junio, 2021"
       />
@@ -179,17 +180,34 @@ console.log(clicked)
       subheader="Julio, 2021"
         avatar={
           <div style={{display:"flex"}}>
-            <Avatar alt="Dario Velazquez" src={dario} />
+            <Link target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7" >
+              <Avatar alt="Dario Velazquez" src={dario}/>
+            </Link>
+            <Avatar className={clicked? classes.avatarOff: classes.avatarOn} style={{background: primaryColor}}>+7</Avatar>
             <Collapse in={expanded3} timeout="auto" unmountOnExit >
             <span className={ clicked? classes.avatarOn: classes.avatarOff}>
               <AvatarGroup max={7} classes={{avatar: classes.boderAvatarGroup}}>
-                <Avatar alt="Walter Cuberas " src="https://avatars.githubusercontent.com/u/78507317?v=4" />
-                <Avatar alt="Ulises Scardino" src="https://avatars.githubusercontent.com/u/79987045?v=4" />
-                <Avatar alt="Pedro Vaquer" src="https://avatars.githubusercontent.com/u/77697735?v=4"/>
-                <Avatar alt="Mariano Villafuerte" src="https://avatars.githubusercontent.com/u/68519005?v=4" />
-                <Avatar alt="Veronica Cardozo" src="https://avatars.githubusercontent.com/u/8940512?v=4" />
-                <Avatar alt="David Cesaretti" src="https://avatars.githubusercontent.com/u/74600056?v=4" />
-                <Avatar alt="Jesus Gedler" src="https://avatars.githubusercontent.com/u/77858557?v=4" />
+                <Link target="_blank" rel="noreferrer" href="https://github.com/wcuberas" >
+                  <Avatar alt="Walter Cuberas " src="https://avatars.githubusercontent.com/u/78507317?v=4" />
+                </Link>
+                <Link target="_blank" rel="noreferrer" href="https://github.com/ulises2125" >
+                  <Avatar alt="Ulises Scardino" src="https://avatars.githubusercontent.com/u/79987045?v=4" />
+                </Link>
+                <Link target="_blank" rel="noreferrer" href="https://github.com/Pevaq" >
+                  <Avatar alt="Pedro Vaquer" src="https://avatars.githubusercontent.com/u/77697735?v=4"/>
+                </Link>
+                <Link target="_blank" rel="noreferrer" href="https://github.com/nitovill" >
+                  <Avatar alt="Mariano Villafuerte" src="https://avatars.githubusercontent.com/u/68519005?v=4" />
+                </Link>
+                <Link target="_blank" rel="noreferrer" href="https://github.com/V33RO" >
+                  <Avatar alt="Veronica Cardozo" src="https://avatars.githubusercontent.com/u/8940512?v=4" />
+                </Link>
+                <Link target="_blank" rel="noreferrer" href="https://github.com/davidcesaretti" >
+                  <Avatar alt="David Cesaretti" src="https://avatars.githubusercontent.com/u/74600056?v=4" />
+                </Link>
+                <Link target="_blank" rel="noreferrer" href="https://github.com/jesusegg" >
+                  <Avatar alt="Jesus Gedler" src="https://avatars.githubusercontent.com/u/77858557?v=4" />
+                </Link>
               </AvatarGroup>
             </span>
             </Collapse>

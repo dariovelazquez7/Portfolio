@@ -117,21 +117,17 @@ function Contact() {
                   </a>
                 </div>
                 <div className={classes.git}>
-                <a target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7">
-                  {/* <img src={github} alt="https://github.com/dariovelazquez7" className={classes.logo}/> */}
-                  <GitHubIcon style={{fontSize:"65px", color:"#198CD8"}}/> 
-                </a>
+                  <a target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7">
+                    <GitHubIcon style={{fontSize:"65px", color:"#198CD8"}}/> 
+                  </a>
                 </div>
                 <div className={classes.divslogo}> 
-                  <div className={classes.download}>
-                  
-                <a href="https://drive.google.com/uc?export=download&id=1ew6ZeEZ6G2wcmt3K2OMTCKagppWN_TJc">
-                    <GetAppIcon style={{fontSize:"50px"}}/>
-                </a>
+                  <div className={classes.download}>      
+                    <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1ew6ZeEZ6G2wcmt3K2OMTCKagppWN_TJc/view">
+                        <GetAppIcon style={{fontSize:"50px"}}/>
+                    </a>
                   </div>
-
-                </div>
-                  
+                </div>       
               </section>
           </main>
         </div>
