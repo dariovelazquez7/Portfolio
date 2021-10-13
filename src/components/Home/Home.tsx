@@ -21,8 +21,23 @@ const useStyles = makeStyles((theme: Theme) =>
     
     h33:{
       fontFamily: "monospace",
-      
+      [theme.breakpoints.down("xs")]:{
+        fontSize: "29px"
+      }
     },
+    subtitle:{
+      fontFamily: "monospace",
+      [theme.breakpoints.down("xs")]:{
+        fontSize: "15px"
+      }
+    },
+    subtitle2:{
+      fontFamily: "monospace",
+      [theme.breakpoints.down("xs")]:{
+        fontSize: "12px"
+      }
+    },
+    
     photo:{
     height: "250px",
     width: "250px",
@@ -50,12 +65,12 @@ function Home():JSX.Element {
         <Typography variant="h3" className={classes.h33} style={{color:"#198CD8"}}>
           Full Stack Developer.
         </Typography>
-        <Typography variant="h6" className={classes.h33} style={{ marginTop:"20px"}}>
+        <Typography variant="h6" className={classes.subtitle} style={{ marginTop:"20px"}}>
         ✅ Constante aprendizaje. {<br/>}
         ✅ Trabajo en equipo. {<br/>}
         ✅ Soluciones.
         </Typography>
-        <Typography variant="overline" className={classes.h33} style={{color:"gray", fontSize:"18px"}}> 
+        <Typography variant="overline" className={classes.subtitle2} style={{color:"gray", fontSize:"18px"}}> 
         Bienvenidos a mi portfolio
         </Typography>
         </section>

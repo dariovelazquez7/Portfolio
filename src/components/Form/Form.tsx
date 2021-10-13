@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import {Box,Container,Typography, Button} from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -18,20 +19,49 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
        background:"#f8feff",
        borderRadius: "8px",
-       minHeight: "530px"
+       minHeight: "530px",
+       [theme.breakpoints.down("xs")]:{
+        minHeight: "200px",
+      }
     },
     snack:{
       position: "relative",
       bottom: 0,
       top: 120
+    },
+    typography:{
+      margin: "10px 0", 
+      fontFamily: "monospace",
+      [theme.breakpoints.down("xs")]:{
+        fontSize: "20px"
+      }
+    },
+    typography2:{
+      margin: "10px 0", 
+      fontFamily: "monospace",
+      [theme.breakpoints.down("xs")]:{
+        fontSize: "13px"
+      }
+    },
+    form:{
+      marginTop:"30px",
+      [theme.breakpoints.down("xs")]:{
+        marginTop:"10px",
+      }
+    },
+    inputs:{
+      [theme.breakpoints.down("xs")]:{
+        padding:"14px",
+      }
     }
-    
   }),
 );
 
 export default function Form() {
   const classes = useStyles();
   const [open, setOpen] = React.useState<Boolean | any>(false);
+  const tema = useTheme()
+  const match = useMediaQuery(tema.breakpoints.down('xs'))
   
 
   const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
@@ -73,12 +103,12 @@ export default function Form() {
               touched,
               values
             }) => (
-              <form onSubmit={handleSubmit} style={{marginTop:"30px"}}>
-                <Box sx={{ mb: 3 }} >
+              <form onSubmit={handleSubmit} className={classes.form}>
+                <Box  >
                   <Typography
                     color="textPrimary"
                     variant="h4"
-                    style={{marginTop: "10px", fontFamily: "monospace",}}
+                    className={classes.typography}
                   >
                     Envíame un email
                   </Typography>
@@ -86,7 +116,7 @@ export default function Form() {
                     color="textSecondary"
                     gutterBottom
                     variant="body2"
-                    style={{fontFamily: "monospace",}}
+                    className={classes.typography2}
                   >
                     Completa todos los campos...
                   </Typography>
@@ -102,6 +132,7 @@ export default function Form() {
                   onChange={handleChange}
                   value={values.name}
                   variant="outlined"
+                  
                 />
                 <TextField
                   error={Boolean(touched.email && errors.email)}
@@ -130,9 +161,9 @@ export default function Form() {
                   value={values.msj}
                   variant="outlined"
                   multiline
-                  rows={4}
+                  rows={!match? 4: 3}
                 />
-                <Box sx={{ py: 2 }}>
+                <Box sx={{ py: 1 }}>
                   <Button
                     color="primary"
                     fullWidth
@@ -142,11 +173,11 @@ export default function Form() {
                   >
                     Enviar
                   </Button>
-                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} className={classes.snack}>
+                  <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} className={classes.snack}>
                     <Alert onClose={handleClose} severity={"success"} >
                         Mensaje enviado correctamente!
                     </Alert>
-                    </Snackbar>    
+                  </Snackbar>    
                 </Box>
               </form>
             )}

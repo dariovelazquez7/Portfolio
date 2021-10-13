@@ -9,7 +9,14 @@
   font-size: 10px;
   height: 100vh;
   position: relative;
-  margin-left: 120px;
+  margin-left: 10%;
+  font-family: monospace;
+}
+
+@media screen and (max-width: 600px){
+  .slide{
+    margin-left: 2%;
+  }
 }
 
 

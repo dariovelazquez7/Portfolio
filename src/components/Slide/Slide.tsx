@@ -16,6 +16,8 @@ import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import { useMediaQuery, useTheme } from '@material-ui/core';
+
 
 const primaryColor= "#198CD8"
 const useStyles = makeStyles((theme:Theme) =>
@@ -37,7 +39,7 @@ createStyles({
   },
   arrow: {
     position: "absolute",
-    left: "45%",
+    left: "50%",
     transform: "translateY(-50%)",
     WebkitTransform:"translateY(-50%)",
     fill: "#fff",
@@ -66,7 +68,7 @@ createStyles({
   iconArrowDown:{
     height:"40px",
     width: "40px",
-    bottom: "-10px",
+    bottom: 0,
     top: "auto",
   },
   arrowDisabled: {
@@ -77,6 +79,9 @@ createStyles({
     flexDirection: "column",
     justifyContent: "center",
     borderRight:"0.5px solid white",
+    [theme.breakpoints.down('sm')]:{
+      display: "none",
+    }
   },
   dot:{
     border: "none",
@@ -99,9 +104,9 @@ createStyles({
 )
 
 
+
 export default function Slide (){
   
-
   const [currentSlide, setCurrentSlide] = useState<Number>(0)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -112,6 +117,7 @@ export default function Slide (){
   })
 
   const classes = useStyles()
+  
   return (
     <div className={classes.container}>
       <div className="navigation-wrapper"> 

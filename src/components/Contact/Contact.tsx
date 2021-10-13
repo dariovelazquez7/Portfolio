@@ -21,21 +21,32 @@ createStyles({
       tipography:{
         fontFamily: "monospace",
         marginBottom:"40px",
+        [theme.breakpoints.down("xs")]:{
+          fontSize: "20px",
+          marginBottom:"10px",
+        }
       },
     content: {
         padding: theme.spacing(1),
         textAlign: "initial",
         fontFamily: "monospace",
-        display: "flex"
-      },
-      logo: {
-        height: "70px",
-        width: "70px",
-        "&:hover":{
-          cursor:"pointer"
+        display: "flex",
+        [theme.breakpoints.down("xs")]:{
+          flexDirection: "column",
         }
       },
-      download:{
+      logo: {
+        height: "65px",
+        width: "65px",
+        "&:hover":{
+          cursor:"pointer"
+        },
+        [theme.breakpoints.down("xs")]:{
+          height: "35px",
+        width: "35px",
+        }
+      },
+      downloadBackground:{
         display:"flex",
         justifyContent: "center",
         alignItems: "center",
@@ -44,14 +55,36 @@ createStyles({
         width: "65px",
         height:"65px",
         color: "white", 
+        transition:  "0.4s ease",
         "&:hover":{
-          cursor:"pointer"
+          transition:  "0.4s ease",
+          transform: "translateY(3px)",
+          transformOrigin: "center center",
+        },
+        
+        [theme.breakpoints.down("xs")]:{
+          height: "35px",
+        width: "35px",
         }
       },
+      download:{
+        fontSize: "50px",
+        [theme.breakpoints.down("xs")]:{
+          height: "25px",
+          width: "25px",
+        }
+      },
+      
       sectionLogo:{
         display:"flex",
         flexDirection: "column",
         justifyContent: "space-around",
+        [theme.breakpoints.down("xs")]:{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          marginTop:"5px",
+        }
       },
       divslogo:{
         display: "flex",
@@ -68,9 +101,11 @@ createStyles({
         fontFamily: "monospace", 
         marginLeft:"100px",
         marginRight: "30px",
-        
+        [theme.breakpoints.down("xs")]:{
+          display: "none",
+        }
       },
-      git:{
+      gitBackground:{
         display:"flex",
         justifyContent: "center",
         alignItems: "center",
@@ -83,6 +118,18 @@ createStyles({
           transition:  "0.4s ease",
           transform: "translateY(3px)",
           transformOrigin: "center center",
+        },
+        [theme.breakpoints.down("xs")]:{
+          width: "34px",
+          height:"32px",
+        }
+      },
+      git:{
+        fontSize:"65px", 
+        color:"#198CD8",
+        [theme.breakpoints.down("xs")]:{
+          width: "35px",
+          height:"35px",
         }
       }
 })
@@ -99,7 +146,7 @@ function Contact() {
       </Typography>
             <main className={classes.content}>
               <Form/>
-             <section className={classes.sectionLogo}>
+              <section className={classes.sectionLogo}>
                 <Typography variant="body1" className={classes.tipographyLogo}> 
                 ✅ Perfil de Linkedin:
                 </Typography>
@@ -109,24 +156,22 @@ function Contact() {
                 <Typography variant="body1" className={classes.tipographyLogo}> 
                 ✅ Descarga mi CV:
                 </Typography>
-             </section>
+              </section>
               <section className={classes.sectionLogo}>
                 <div className={classes.divslogo}>
                   <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/velazquez-dario/">
                   <img src={linkedin} alt="https://www.linkedin.com/in/velazquez-dario/" className={classes.logo}/>
                   </a>
                 </div>
-                <div className={classes.git}>
+                <div className={classes.gitBackground}>
                   <a target="_blank" rel="noreferrer" href="https://github.com/dariovelazquez7">
-                    <GitHubIcon style={{fontSize:"65px", color:"#198CD8"}}/> 
+                    <GitHubIcon className={classes.git}/> 
                   </a>
                 </div>
-                <div className={classes.divslogo}> 
-                  <div className={classes.download}>      
-                    <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1ew6ZeEZ6G2wcmt3K2OMTCKagppWN_TJc/view">
-                        <GetAppIcon style={{fontSize:"50px"}}/>
-                    </a>
-                  </div>
+                <div className={classes.downloadBackground}>      
+                  <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1ew6ZeEZ6G2wcmt3K2OMTCKagppWN_TJc/view">
+                      <GetAppIcon className={classes.download}/>
+                  </a>
                 </div>       
               </section>
           </main>
