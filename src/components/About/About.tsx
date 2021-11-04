@@ -101,15 +101,15 @@ createStyles({
         position:"absolute",
         width:0,
         background: "black",
-        borderLeft: "2px solid rgba(255, 255, 255, 0.75)",
-        animation: "$cursor 1.2s infinite normal ",
+        borderLeft: "1.5px solid rgba(255, 255, 255, 0.75)",
+        animation: "$cursor 1.1s infinite normal",
       },
       "@keyframes cursor":{
         from: {
-          borderLeftColor: "rgba(255, 255, 255, 0.75)"
+          borderLeft: "1.5px solid rgba(255, 255, 255, 0.75)",
         },
         to: {
-          borderLeft: "none"
+          borderLeft: "none",
         }
   }
 })
@@ -131,12 +131,12 @@ function About() {
             </Typography>
           </header>
           <section>
-            <Typography variant="body2" className={classes.tipography}>
-            Descubrí mi pasión por el desarrollo web hace relativamente poco tiempo, pero me bastó para saber 
-            que es a lo que quiero dedicarme el resto de mi vida. Empiezo así una etapa que no va a tener techo, 
-            en donde buscaré el óptimo desarrollo personal y profesional dentro de este campo.
-            Soy apasionado por lo que emprendo, critico de mi mismo, y con buena capacidad para trabajar en equipo.
-            Me gusta ser detallista y aportar desde el lugar que me toca. siempre con criterio y objetividad... 
+            <Typography variant="body1" className={classes.tipography}>
+            Mi nombre es Darío, y soy de Buenos Aires, Argentina.
+            Cuando no estoy programando me gusta pasar tiempo con amigos, jugar futbol y jugar videosjuegos.
+            A inicios del año 2021 comencé a interesarme por el desarrollo web y encontré, por fin, mi verdadera vocación.
+            Estoy en constante aprendizaje, y busco nuevos desafíos ya que gracias a ellos podré superarme día a día,
+            así que puedo decir que todavía queda mucho código por escribir...
             <span className={classes.cursor}>&#160;</span>
             </Typography>
           </section>

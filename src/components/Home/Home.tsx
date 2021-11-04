@@ -4,8 +4,6 @@ import Typography from '@material-ui/core/Typography';
 import foto from "../../img/dario.jpg"
 import Avatar from '@material-ui/core/Avatar';
 
-
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -50,6 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 function Home():JSX.Element {
+  
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -77,6 +76,7 @@ function Home():JSX.Element {
       </main>
         <div >
           {/* <Avatar src={foto} alt="Dario velazquez" className={classes.photo}/>  */}
+
         </div>
     </div>
   );

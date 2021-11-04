@@ -42,8 +42,8 @@ createStyles({
           cursor:"pointer"
         },
         [theme.breakpoints.down("xs")]:{
-          height: "35px",
-        width: "35px",
+          height: "45px",
+          width: "45px",
         }
       },
       downloadBackground:{
@@ -63,15 +63,15 @@ createStyles({
         },
         
         [theme.breakpoints.down("xs")]:{
-          height: "35px",
-        width: "35px",
+          height: "45px",
+          width: "45px",
         }
       },
       download:{
         fontSize: "50px",
         [theme.breakpoints.down("xs")]:{
-          height: "25px",
-          width: "25px",
+          height: "35px",
+          width: "35px",
         }
       },
       
@@ -120,16 +120,16 @@ createStyles({
           transformOrigin: "center center",
         },
         [theme.breakpoints.down("xs")]:{
-          width: "34px",
-          height:"32px",
+          width: "44px",
+          height:"42px",
         }
       },
       git:{
         fontSize:"65px", 
         color:"#198CD8",
         [theme.breakpoints.down("xs")]:{
-          width: "35px",
-          height:"35px",
+          width: "45px",
+          height:"45px",
         }
       }
 })
