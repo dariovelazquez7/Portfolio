@@ -12,11 +12,13 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import EmailIcon from '@material-ui/icons/Email';
 import HomeIcon from '@material-ui/icons/Home';
+
 import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { useMediaQuery, useTheme } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 const primaryColor= "#198CD8"
@@ -78,7 +80,7 @@ createStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    borderRight:"0.5px solid white",
+    borderRight:"0.5px solid #707070",
     [theme.breakpoints.down('sm')]:{
       display: "none",
     }
@@ -98,7 +100,16 @@ createStyles({
     borderRadius: "20px",
   }
   },
-  
+  sideMenu:{
+    display: "none",
+    position: "fixed",
+    left: 5,
+    top: 7,
+    zIndex: 1,
+    [theme.breakpoints.down('sm')]:{
+      display: "inline",
+    }
+  }
  
 })
 )
@@ -120,7 +131,8 @@ export default function Slide (){
   
   return (
     <div className={classes.container}>
-      <div className="navigation-wrapper"> 
+      <div className={classes.sideMenu}>
+        <MenuIcon/>
       </div>
       {slider && (
       <div className={classes.dots}>

@@ -8,6 +8,7 @@ import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
+import { width } from '@mui/system';
 
 
 function Alert(props: AlertProps) {
@@ -21,13 +22,17 @@ const useStyles = makeStyles((theme: Theme) =>
        borderRadius: "8px",
        minHeight: "530px",
        [theme.breakpoints.down("xs")]:{
-        minHeight: "441px",
+        minHeight: "380px",
       }
     },
     snack:{
       position: "relative",
       bottom: 0,
-      top: 120
+      top: 120,
+      [theme.breakpoints.down("xs")]:{
+        top: 8,
+        width: "80%"
+      }
     },
     typography:{
       margin: "10px 0", 
@@ -106,7 +111,6 @@ export default function Form() {
               values
             }) => (
               <form onSubmit={handleSubmit} className={classes.form}>
-                <div>
                 <Box  >
                   <Typography
                     color="textPrimary"
@@ -131,21 +135,22 @@ export default function Form() {
                   fullWidth
                   helperText={touched.name && errors.name}
                   label="Nombre y apellido"
-                  margin="normal"
+                  margin={match? "dense": "normal"}
                   name="name"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.name}
                   variant="outlined"
                   className={classes.inputs}
-                  
+                  style={{marginBottom: touched.name && errors.name? "5px": "25px"}}
                 />
+                
                 <TextField
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
                   helperText={touched.email && errors.email}
                   label="Indique su email"
-                  margin="normal"
+                  margin={match? "dense": "normal"}
                   name="email"
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -153,14 +158,15 @@ export default function Form() {
                   value={values.email}
                   variant="outlined"
                   className={classes.inputs}
-                 
+                  style={{marginBottom: touched.email && errors.email? "5px": "25px"}}
                 />
+                {console.log(values.name)}
                 <TextField
                   error={Boolean(touched.msj && errors.msj)}
                   fullWidth
                   helperText={touched.msj && errors.msj}
                   label="Escriba un mensaje"
-                  margin="normal"
+                  margin={match? "dense": "normal"}
                   name="msj"
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -170,6 +176,7 @@ export default function Form() {
                   multiline
                   rows={!match? 4: 3}
                   className={classes.inputs}
+                  style={{marginBottom: touched.msj && errors.msj? "5px": "25px"}}
                 />
                 <Box sx={{ py: 1 }}>
                   <Button
@@ -182,12 +189,15 @@ export default function Form() {
                     Enviar
                   </Button>
                   <Snackbar open={open} autoHideDuration={5000} onClose={handleClose} className={classes.snack}>
-                    <Alert onClose={handleClose} severity={"success"} >
+                    {!match? <Alert onClose={handleClose} severity={"success"} >
                         Mensaje enviado correctamente!
-                    </Alert>
+                    </Alert>:
+                    <Alert onClose={handleClose} severity={"success"}  >
+                    Mensaje enviado!
+                </Alert>
+                    }
                   </Snackbar>    
                 </Box>
-                </div>
               </form>
             )}
           </Formik>

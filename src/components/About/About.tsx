@@ -40,7 +40,7 @@ createStyles({
 
         [theme.breakpoints.down("xs")]:{
           fontSize: "12px",
-          marginBottom:"10px",
+          marginBottom:"15px",
         }
       },
       tipography2:{
@@ -50,7 +50,7 @@ createStyles({
 
         [theme.breakpoints.down("xs")]:{
           fontSize: "16px",
-          marginBottom:"10px",
+          marginBottom:"15px",
         }
       },
       tipographyIcons:{
@@ -95,7 +95,10 @@ createStyles({
         gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr",
         gridTemplateRows: "1fr 1fr",
         textAlign: "center",
-      justifyItems: "start",
+        justifyItems: "start",
+        [theme.breakpoints.down("xs")]:{
+        padding: "10px 0"
+        }
       },
       cursor:{
         position:"absolute",
@@ -141,7 +144,7 @@ function About() {
             </Typography>
           </section>
           <Typography className={classes.tipography2} variant={"h5"}>
-            Skills:
+            Mi stack tecnologico:
           </Typography>
           <section className={classes.containerSkills}>
             <div>

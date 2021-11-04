@@ -1,8 +1,7 @@
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import foto from "../../img/dario.jpg"
-import Avatar from '@material-ui/core/Avatar';
+import home from "../../img/home.png"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -10,6 +9,11 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       alignItems: "center",
       minHeight:"100vh",
+      [theme.breakpoints.down("xs")]:{
+        display: 'flex',
+        flexDirection: "column",
+        justifyContent: "center"
+      }
     },
     content: {  
       // padding: theme.spacing(1),
@@ -17,10 +21,10 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "50px"
     },
     
-    h33:{
+    typography:{
       fontFamily: "monospace",
       [theme.breakpoints.down("xs")]:{
-        fontSize: "29px"
+        fontSize: "27px"
       }
     },
     subtitle:{
@@ -31,16 +35,23 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     subtitle2:{
       fontFamily: "monospace",
+      color:"gray", 
+      fontSize:"18px",
       [theme.breakpoints.down("xs")]:{
-        fontSize: "12px"
+        fontSize: "14px"
       }
     },
     
     photo:{
-    height: "250px",
-    width: "250px",
+    width: "450px",
     marginLeft: "60px",
-    boxShadow: "0 0 6px 5px #198CD8",
+    [theme.breakpoints.down("xs")]:{
+      display: 'flex',
+      flexDirection: "column",
+      width: "250px",
+      height: "200px",
+      marginLeft: 0,
+    }
     }
   })
 );
@@ -55,13 +66,13 @@ function Home():JSX.Element {
       <CssBaseline />    
       <main className={classes.content}>
       <section >
-        <Typography variant="h3" className={classes.h33}>
+        <Typography variant="h3" className={classes.typography}>
           Hola,
         </Typography>
-        <Typography variant="h3" className={classes.h33}>
+        <Typography variant="h3" className={classes.typography}>
           soy Dario,
         </Typography>
-        <Typography variant="h3" className={classes.h33} style={{color:"#198CD8"}}>
+        <Typography variant="h3" className={classes.typography} style={{color:"#198CD8"}}>
           Full Stack Developer.
         </Typography>
         <Typography variant="h6" className={classes.subtitle} style={{ marginTop:"20px"}}>
@@ -69,13 +80,13 @@ function Home():JSX.Element {
         ✅ Trabajo en equipo. {<br/>}
         ✅ Soluciones.
         </Typography>
-        <Typography variant="overline" className={classes.subtitle2} style={{color:"gray", fontSize:"18px"}}> 
+        <Typography variant="overline" className={classes.subtitle2} > 
         Bienvenidos a mi portfolio
         </Typography>
         </section>
       </main>
         <div >
-          {/* <Avatar src={foto} alt="Dario velazquez" className={classes.photo}/>  */}
+          <img src={home} alt="Dario velazquez" className={classes.photo}/> 
 
         </div>
     </div>
