@@ -29,8 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
       bottom: 0,
       top: 120,
       [theme.breakpoints.down("xs")]:{
-        top: 8,
-        width: "80%"
+        top: 5,
       }
     },
     typography:{
@@ -188,7 +187,7 @@ export default function Form() {
                     Enviar
                   </Button>
                   <Snackbar open={open} autoHideDuration={5000} onClose={handleClose} className={classes.snack}>
-                    {!match? <Alert onClose={handleClose} severity={"success"} >
+                    {!match? <Alert onClose={handleClose} severity={"success"}>
                         Mensaje enviado correctamente!
                     </Alert>:
                     <Alert onClose={handleClose} severity={"success"}  >
