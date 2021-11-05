@@ -60,6 +60,7 @@ createStyles({
         [theme.breakpoints.down("xs")]: {
           fontSize: "20px",
           marginBottom: "20px",
+          textAlign: "center"
         }
       },
       tipography:{

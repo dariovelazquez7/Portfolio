@@ -1,21 +1,28 @@
 .keen-slider {
   height: 100vh;
+  background: black;
 }
+.keen-slider-mobile{
+  height: 100vh;
+  background-color: #242d34;
+}
+
 .slide {
-  background:black;
   display: flex;
   color: #fff;
   font-weight: 500;
   font-size: 10px;
   height: 100vh;
   position: relative;
-  margin-left: 10%;
+  padding-left: 10%;
   font-family: monospace;
+  width: 100%;
 }
 
 @media screen and (max-width: 600px){
   .slide{
-    margin-left: 2%;
+    padding-left: 2%;
+    justify-content: center;
   }
 }
 

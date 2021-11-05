@@ -8,7 +8,8 @@ export const theme = createTheme({
           body: {
             WebkitFontSmoothing: 'auto',
             backgroundColor: "black",
-            color: "white"
+            color: "white",
+            
           },
         },
       },

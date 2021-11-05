@@ -24,6 +24,7 @@ createStyles({
         [theme.breakpoints.down("xs")]:{
           fontSize: "20px",
           marginBottom:"10px",
+          textAlign: "center"
         }
       },
     content: {

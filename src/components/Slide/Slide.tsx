@@ -12,13 +12,14 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import EmailIcon from '@material-ui/icons/Email';
 import HomeIcon from '@material-ui/icons/Home';
-
 import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { useMediaQuery, useTheme } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
+
+import { useMediaQuery, useTheme } from '@material-ui/core';
 
 
 const primaryColor= "#198CD8"
@@ -81,8 +82,15 @@ createStyles({
     flexDirection: "column",
     justifyContent: "center",
     borderRight:"0.5px solid #707070",
-    [theme.breakpoints.down('sm')]:{
-      display: "none",
+    // transition: "ease 0.5s",
+  [theme.breakpoints.down('xs')]:{
+    position: "absolute",
+    zIndex: 1,
+    display: "flex",
+    height: "100%",
+    background: "black",
+    transition: "left ease 0.5s",
+    width: "55%"
     }
   },
   dot:{
@@ -105,19 +113,18 @@ createStyles({
     position: "fixed",
     left: 5,
     top: 7,
-    zIndex: 1,
-    [theme.breakpoints.down('sm')]:{
+    zIndex: 2,
+    [theme.breakpoints.down('xs')]:{
       display: "inline",
     }
-  }
- 
+  },
 })
 )
 
 
 
 export default function Slide (){
-  
+  const [open, setOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState<Number>(0)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -131,11 +138,13 @@ export default function Slide (){
   
   return (
     <div className={classes.container}>
-      <div className={classes.sideMenu}>
-        <MenuIcon/>
-      </div>
+      {open?
+        <CloseIcon onClick={() => setOpen(!open)} className={classes.sideMenu}/>:
+        <MenuIcon onClick={() => setOpen(!open)} className={classes.sideMenu} />
+      }
+      
       {slider && (
-      <div className={classes.dots}>
+      <div className={classes.dots} style={{left: open? 0: "-100%"}}>
           {[...Array(slider.details().size).keys()].map((idx) => {
             return (
               <List key={idx} style={{margin: "0 10px"}}>
@@ -169,7 +178,7 @@ export default function Slide (){
           </div>
          
       )}
-      <div ref={sliderRef} className="keen-slider" >
+      <div ref={sliderRef} className={open? "keen-slider-mobile":"keen-slider"} >
         <div className="keen-slider__slide slide" ><Home/></div>
         <div className="keen-slider__slide slide" ><About/></div>
         <div className="keen-slider__slide slide" ><Projects/></div> 

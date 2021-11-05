@@ -31,6 +31,7 @@ createStyles({
         [theme.breakpoints.down("xs")]:{
           fontSize: "20px",
           marginBottom:"15px",
+          textAlign: "center"
         },
       },
       tipography:{
@@ -41,6 +42,7 @@ createStyles({
         [theme.breakpoints.down("xs")]:{
           fontSize: "12px",
           marginBottom:"15px",
+          
         }
       },
       tipography2:{
@@ -51,6 +53,7 @@ createStyles({
         [theme.breakpoints.down("xs")]:{
           fontSize: "16px",
           marginBottom:"15px",
+          textAlign: "center",
         }
       },
       tipographyIcons:{
@@ -167,7 +170,7 @@ function About() {
               <img src={redux} alt="" className={classes.icons}/>
               <h3 className={classes.tipographyIcons} >Redux</h3>
             </div>
-            <div style={match? {marginLeft:"-11px"}:{marginLeft:"-22px"}}>
+            <div style={{marginLeft:match? "-11px": "-22px"}}>
               <img src={express} alt="" className={classes.especialExpress} />
               <h3 className={classes.tipographyIcons} >Express</h3>
             </div>

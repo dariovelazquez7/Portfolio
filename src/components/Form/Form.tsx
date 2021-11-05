@@ -8,8 +8,6 @@ import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { width } from '@mui/system';
-
 
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -23,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
        minHeight: "530px",
        [theme.breakpoints.down("xs")]:{
         minHeight: "380px",
+        width: "298px"
       }
     },
     snack:{
@@ -38,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: "10px 0", 
       fontFamily: "monospace",
       [theme.breakpoints.down("xs")]:{
-        fontSize: "20px"
+        fontSize: "18px"
       }
     },
     typography2:{
@@ -160,7 +159,7 @@ export default function Form() {
                   className={classes.inputs}
                   style={{marginBottom: touched.email && errors.email? "5px": "25px"}}
                 />
-                {console.log(values.name)}
+                
                 <TextField
                   error={Boolean(touched.msj && errors.msj)}
                   fullWidth

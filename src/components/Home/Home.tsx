@@ -45,7 +45,8 @@ const useStyles = makeStyles((theme: Theme) =>
     photo:{
     width: "450px",
     marginLeft: "60px",
-    [theme.breakpoints.down("xs")]:{
+    
+    [theme.breakpoints.down("sm")]:{
       display: 'flex',
       flexDirection: "column",
       width: "250px",
