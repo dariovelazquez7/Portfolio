@@ -9,7 +9,7 @@ const {EMAIL_TRANSPORTER, PASS, MY_EMAIL, PORT} = process.env
 
 const app:Application = express()
 app.listen(PORT || 3001, () => {
-    console.log("servidor corriendo en puerto 3001!")
+    console.log(`servidor corriendo en puerto ${PORT}!`)
 })
 
 app.use(express.urlencoded({extended: false}))
@@ -35,9 +35,10 @@ app.post("/sendEmail",  async(req:Request,res:Response) => {
         `
     try{
         const transporter= nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true,
+        // host: "smtp.gmail.com",
+        // port: 465,
+        // secure: true,
+        service: 'gmail',
         auth:{
             user: `${EMAIL_TRANSPORTER}`,  
             pass: `${PASS}`
@@ -53,7 +54,7 @@ app.post("/sendEmail",  async(req:Request,res:Response) => {
         return res.send("email enviado correctamente")
     }
     catch(err){
-        return res.send(err)
+        return res.send("nono")
     }
 });
 
