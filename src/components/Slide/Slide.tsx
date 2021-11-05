@@ -144,7 +144,7 @@ export default function Slide (){
       }
       
       {slider && (
-      <div className={classes.dots} style={{left: open? 0: "-100%"}}>
+      <div className={classes.dots} style={{left: open? 0: "-100%", transition: "left 0.5s", }}>
           {[...Array(slider.details().size).keys()].map((idx) => {
             return (
               <List key={idx} style={{margin: "0 10px"}}>
