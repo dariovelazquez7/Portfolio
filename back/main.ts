@@ -1,6 +1,5 @@
 
 import { Request, Response, Application } from "express"
-import { send } from "process";
 require('dotenv').config(); 
 const express = require("express");
 const nodemailer = require("nodemailer");
@@ -57,3 +56,7 @@ app.post("/sendEmail",  async(req:Request,res:Response) => {
         return res.send(err)
     }
 });
+
+app.get("/test", (req,res)=> {
+    return res.send("estoy funcionanding")
+})
