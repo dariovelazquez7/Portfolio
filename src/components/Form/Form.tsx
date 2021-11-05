@@ -113,7 +113,7 @@ export default function Form() {
                 <Box  >
                   <Typography
                     color="textPrimary"
-                    variant="h4"
+                    variant="h5"
                     className={classes.typography}
                     style={{marginTop: 0}}
                   >

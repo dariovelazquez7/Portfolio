@@ -137,7 +137,7 @@ function About() {
             </Typography>
           </header>
           <section>
-            <Typography variant="body1" className={classes.tipography}>
+            <Typography variant="body2" className={classes.tipography}>
             Mi nombre es Darío, y soy de Buenos Aires, Argentina.
             Cuando no estoy programando me gusta pasar tiempo con amigos, jugar futbol y jugar videosjuegos.
             A inicios del año 2021 comencé a interesarme por el desarrollo web y encontré, por fin, mi verdadera vocación.

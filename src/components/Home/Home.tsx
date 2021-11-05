@@ -27,6 +27,14 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: "27px"
       }
     },
+    typographyDev:{
+      fontFamily: "monospace",
+      fontSize: "38px",
+      color:"#198CD8",
+      [theme.breakpoints.down("xs")]:{
+        fontSize: "27px"
+      }
+    },
     subtitle:{
       fontFamily: "monospace",
       [theme.breakpoints.down("xs")]:{
@@ -73,7 +81,7 @@ function Home():JSX.Element {
         <Typography variant="h3" className={classes.typography}>
           soy Dario,
         </Typography>
-        <Typography variant="h3" className={classes.typography} style={{color:"#198CD8"}}>
+        <Typography variant="h4" className={classes.typographyDev}>
           Full Stack Developer.
         </Typography>
         <Typography variant="h6" className={classes.subtitle} style={{ marginTop:"20px"}}>
