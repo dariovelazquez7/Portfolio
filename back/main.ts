@@ -4,11 +4,11 @@ require('dotenv').config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
-const {EMAIL_TRANSPORTER, PASS, MY_EMAIL} = process.env
+const {EMAIL_TRANSPORTER, PASS, MY_EMAIL, PORT} = process.env
 
 
 const app:Application = express()
-app.listen(3001, () => {
+app.listen(PORT || 3001, () => {
     console.log("servidor corriendo en puerto 3001!")
 })
 
