@@ -42,7 +42,8 @@ createStyles({
         [theme.breakpoints.down("xs")]:{
           fontSize: "12px",
           marginBottom:"15px",
-          
+          textAlign: "justify",
+          paddingRight: "10px",
         }
       },
       tipography2:{

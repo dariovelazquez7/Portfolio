@@ -84,7 +84,7 @@ createStyles({
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          marginTop:"5px",
+          marginTop:"15px",
         }
       },
       divslogo:{
