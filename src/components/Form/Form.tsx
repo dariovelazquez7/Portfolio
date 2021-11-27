@@ -95,8 +95,8 @@ export default function Form() {
             onSubmit={(values, {resetForm}) => {
               resetForm()
               setOpen(true)
-              // axios.post("https://dario-velazquez-portfolio.herokuapp.com/sendEmail", values)
-              axios.post("http://localhost:3001/sendEmail", values)
+              axios.post("https://dario-velazquez-portfolio.herokuapp.com/sendEmail", values)
+              // axios.post("http://localhost:3001/sendEmail", values)
               
             }}
           >

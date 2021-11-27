@@ -26,12 +26,12 @@ app.use(cors(corsOptions))
 app.post("/sendEmail",  async(req:Request,res:Response) => {
     const {name, email, msj} = req.body
     const contHTML= 
-        `<h3> Contact info:</h3>
+        `<h3> Información de contacto:</h3>
             <ul>
-                <li>Name: ${name} </li>
+                <li>Nombre: ${name} </li>
                 <li>Email: ${email} </li>
             </ul>
-        <h4>Message: ${msj}</h4>
+        <p>Mensaje: ${msj}</p>
         `
     try{
         const transporter= nodemailer.createTransport({
@@ -57,7 +57,3 @@ app.post("/sendEmail",  async(req:Request,res:Response) => {
         return res.send("nono")
     }
 });
-
-app.get("/test", (req,res)=> {
-    return res.send("estoy funcionanding")
-})

@@ -16,7 +16,7 @@ createStyles({
         flexDirection: "column",
         justifyContent: "center",
         minHeight:"100vh",
-      
+
       },
       tipography:{
         fontFamily: "monospace",

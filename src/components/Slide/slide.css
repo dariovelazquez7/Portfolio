@@ -1,10 +1,12 @@
 .keen-slider {
   height: 100vh;
   background: black;
+
 }
 .keen-slider-mobile{
   height: 100vh;
   background-color: #242d34;
+
 }
 
 .slide {
@@ -17,6 +19,7 @@
   padding-left: 10%;
   font-family: monospace;
   width: 100%;
+
 }
 
 @media screen and (max-width: 600px){
@@ -24,6 +27,7 @@
     padding-left: 2%;
     justify-content: center;
   }
+  
 }
 
 
