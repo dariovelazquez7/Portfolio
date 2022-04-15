@@ -27,7 +27,7 @@ const corsOptions ={
 app.use(cors(corsOptions)) 
 
 app.get('/test', (req:Request, res:Response) => {
-    res.send('hola mundo')
+    res.send('hola mundo') 
 })
 app.post("/sendEmail",  async(req:Request,res:Response) => {
     const {name, email, msj} = req.body
