@@ -64,7 +64,7 @@ app.post("/sendEmail",  async(req:Request,res:Response) => {
               console.log(error);
               res.send("No se pudo enviar el email")
             } else {
-              console.log("Email enviado correctamente: " + info.response);
+              console.log("Email enviado correctamente: " + info.response); 
               return res.send("email enviado correctamente")
             }
           }
