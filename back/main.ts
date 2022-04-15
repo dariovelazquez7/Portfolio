@@ -30,7 +30,7 @@ app.post("/sendEmail",  async(req:Request,res:Response) => {
     const {name, email, msj} = req.body
     let nameCapitalized = name.split(" ").map((e:string) => e.charAt(0).toUpperCase() + e.slice(1)).join(" ")
     const contHTML= 
-    `<div style="font-size:15px; width: 40%; background: #f7f7f7; padding:18px;text-align: center; border-radius: 5px;">
+    `<div style="font-size:15px; width: 40%; background: #f7f7f7; padding:18px;text-align: center; border-radius: 5px;"> 
         <h2 >¡Hola Darío!</h2>
         <div style="width: 59%;margin: auto">
             <p ><b> ${nameCapitalized}</b> te ha enviado un correo desde tu portfolio:</p>
