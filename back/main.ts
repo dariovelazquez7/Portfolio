@@ -5,7 +5,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const colors = require('colors');
-const smtpTransport = require("nodemailer-smtp-transport");
+const smtpTransport = require("nodemailer-smtp-transport"); 
 
 const {EMAIL_TRANSPORTER, PASS, MY_EMAIL, PORT} = process.env
 
