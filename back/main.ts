@@ -26,6 +26,9 @@ const corsOptions ={
 
 app.use(cors(corsOptions)) 
 
+app.get('/test', (req:Request, res:Response) => {
+    res.send('hola mundo')
+})
 app.post("/sendEmail",  async(req:Request,res:Response) => {
     const {name, email, msj} = req.body
     let nameCapitalized = name.split(" ").map((e:string) => e.charAt(0).toUpperCase() + e.slice(1)).join(" ")
