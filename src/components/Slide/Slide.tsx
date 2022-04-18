@@ -82,6 +82,7 @@ createStyles({
     flexDirection: "column",
     justifyContent: "center",
     borderRight:"0.5px solid #707070",
+    width: "55%",
     // transition: "ease 0.5s",
   [theme.breakpoints.down('xs')]:{
     position: "absolute",

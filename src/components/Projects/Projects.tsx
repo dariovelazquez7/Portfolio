@@ -33,10 +33,11 @@ createStyles({
         width: "100vw",
         textAlign: "initial",
         justifyContent: "center",
+        alignItems: "center",
         
       },
       card:{
-        width: "33vw",
+        width: "88%",
         minHeight: 420,
         marginLeft: "8px",
         [theme.breakpoints.down("md")]: {
@@ -50,6 +51,7 @@ createStyles({
         marginTop: "50px",
         gridTemplateColumns: "1fr 1fr",
         gap:"10px",
+        width: "55%",
         [theme.breakpoints.down("xs")]: {
           marginTop: "20px",
         }

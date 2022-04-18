@@ -24,10 +24,12 @@ createStyles({
         minHeight:"100vh",
         flexGrow: 1,
         textAlign: "initial",
+        justifyContent: "center",
       },
       tipographyTitle:{
         fontFamily: "monospace",
         marginBottom:"40px",
+        textAlign:"center",
         [theme.breakpoints.down("xs")]:{
           fontSize: "20px",
           marginBottom:"15px",
@@ -36,7 +38,7 @@ createStyles({
       },
       tipography:{
         fontFamily: "monospace",
-        maxWidth: "800px",
+        fontSize: "17px",
         marginBottom:"40px",
 
         [theme.breakpoints.down("xs")]:{
@@ -48,7 +50,7 @@ createStyles({
       },
       tipography2:{
         fontFamily: "monospace",
-        maxWidth: "800px",
+        textAlign:"center",
         marginBottom:"40px",
 
         [theme.breakpoints.down("xs")]:{
@@ -93,13 +95,13 @@ createStyles({
         }
       },
       containerSkills:{
-        maxWidth: "800px",
+        
         height: "200px",
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr",
         gridTemplateRows: "1fr 1fr",
         textAlign: "center",
-        justifyItems: "start",
+        justifyItems: "center",
         [theme.breakpoints.down("xs")]:{
         padding: "10px 0"
         }
@@ -131,14 +133,14 @@ function About() {
 
     return (
         <div className={classes.root}>
-        <main>
+        <main style={{width: "55%"}}>
           <header>
             <Typography className={classes.tipographyTitle} variant="h4">
               Sobre mí:
             </Typography>
           </header>
           <section>
-            <Typography variant="body2" className={classes.tipography}>
+            <Typography variant='body2' className={classes.tipography}>
             Mi nombre es Darío, y soy de Buenos Aires, Argentina.
             Cuando no estoy programando me gusta pasar tiempo con amigos, jugar futbol y jugar videosjuegos.
             A inicios del año 2021 comencé a interesarme por el desarrollo web y encontré, por fin, mi verdadera vocación.

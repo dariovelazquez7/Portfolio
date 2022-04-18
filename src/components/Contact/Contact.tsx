@@ -16,7 +16,7 @@ createStyles({
         flexDirection: "column",
         justifyContent: "center",
         minHeight:"100vh",
-
+        alignItems: "center",
       },
       tipography:{
         fontFamily: "monospace",
@@ -39,6 +39,7 @@ createStyles({
       logo: {
         height: "65px",
         width: "65px",
+        filter: "hue-rotate(9deg) saturate(1.1)",
         "&:hover":{
           cursor:"pointer"
         },
